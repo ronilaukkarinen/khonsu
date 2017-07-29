@@ -27,17 +27,30 @@ if ( $loop->have_posts() ) : ?>
 
 <div class="block block-random">
 
-	<header class="block-header block-header-smaller">
-		<h2 class="block-title"><span>Satunnaisia juttuja vuosien varrelta</span></h2>
+	<header class="block-header block-header-smaller block-header-cols">
+		<div class="block-header-col-content">
+			<h2 class="block-title"><span>Satunnaisia juttuja vuosien varrelta</span></h2>
+		</div>
+
+		<div class="block-header-col-sidebar">
+			<h2 class="block-title more"><a href="#" class="load-more-random" aria-label="Arvo lisää satunnaisia artikkeleita">Arvo uudet <svg class="svgIcon-use" width="19" height="19" viewBox="0 0 19 19"><path d="M7.6 5.138L12.03 9.5 7.6 13.862l-.554-.554L10.854 9.5 7.046 5.692" fill-rule="evenodd"></path></svg></a></h2>
+		</div>
 	</header>
 
-	<div class="content">
-		<?php while ( $loop->have_posts() ) :
+	<div class="content dynamic-content">
+
+	<?php while ( $loop->have_posts() ) :
 		$loop->the_post();
+
+		if ( has_post_thumbnail() ) :
+			$post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0];
+		else :
+			$post_thumbnail = khonsu_get_random_image_url();
+		endif;
 		?>
 
 		<div class="entry">
-			<div class="entry-featured-image" style="background-image:url('<?php if ( has_post_thumbnail() ) : echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0]; else : echo khonsu_get_random_image_url(); endif; ?>');"><a href="<?php echo get_the_permalink(); ?>" class="absolute-link"><span class="screen-reader-text">Link to article "<?php echo get_the_title(); ?>"</span></a></div>
+			<div class="entry-featured-image" style="background-image:url('<?php echo $post_thumbnail; ?>');"><a href="<?php echo get_the_permalink(); ?>" class="absolute-link"><span class="screen-reader-text">Link to article "<?php echo get_the_title(); ?>"</span></a></div>
 
 			<div class="entry-details">
 				<h3><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
@@ -59,6 +72,7 @@ if ( $loop->have_posts() ) : ?>
 			</div><!-- .entry-details -->              
 		</div><!-- .entry -->
 	<?php endwhile; ?>
-</div><!-- .content -->
+
+	</div><!-- .content -->
 </div><!-- .block -->
 <?php endif; ?>

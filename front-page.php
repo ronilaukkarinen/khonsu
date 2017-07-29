@@ -34,8 +34,13 @@ get_header();
         get_template_part( 'template-parts/block-four' );
         get_template_part( 'template-parts/ads' );
         get_template_part( 'template-parts/block-three-most-popular' );
-        get_template_part( 'template-parts/block-random' );
-        get_template_part( 'template-parts/rss-feeds' );
+      ?>
+
+        <div class="dynamic-random-posts">
+          <?php get_template_part( 'template-parts/block-random' ); ?>
+        </div>
+
+        <?php get_template_part( 'template-parts/rss-feeds' );
       endif;
       ?>
 

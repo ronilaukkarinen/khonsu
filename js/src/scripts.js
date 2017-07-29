@@ -41,6 +41,13 @@
   // Document ready
   $(function() {
 
+    // Load random posts dynamically
+    $('.dynamic-content').load('/content/themes/khonsu/template-parts/block-random-dynamic.php');
+    $('.load-more-random').on('click', function(e) {
+      e.preventDefault();
+      $('.dynamic-content').load('/content/themes/khonsu/template-parts/block-random-dynamic.php');
+    });
+
     // Hide ads if dismissed
     var ad_cookie_status = Cookies.get( 'ad_cookie_status' );
     if( ad_cookie_status === 'dismiss' ) {
