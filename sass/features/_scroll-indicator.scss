@@ -9,17 +9,6 @@
   }
 }
 
-@keyframes fadeOutUpScroll {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-    transform: translateX(-50%) translate3d(0, -100%, 0);
-  }
-}
-
 @keyframes mousePointer {
   0% {
     opacity: 0;
@@ -59,18 +48,22 @@
 
 .scroll-indicator {
   position: absolute;
-  right: 40px;
+  right: 20px;
   bottom: 20px;
   z-index: 3;
   opacity: .5;
   transition: all .55s;
+  overflow: hidden;
+  width: 40px;
+  display: block;
+  height: 120px;
 
   &:hover {
     opacity: .8;
   }
 
   &.fadeout {
-    animation: fadeOutUpScroll 500ms;
+    animation: fadeOutUp 500ms;
     opacity: 0;
   }
 
@@ -82,13 +75,15 @@
     width: 35px;
     height: 55px;
     display: none;
-    animation: fadeOutUp 2s infinite;
+    animation: fadeOutUp 3s infinite;
 
     svg {
       width: 52px;
       height: 65px;
       position: relative;
       fill: #fff;
+      left: -10px;
+      bottom: -60px;
     }
   }
 
