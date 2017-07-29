@@ -35,7 +35,7 @@
 		foreach ( $feed->get_items() as $item ) :
 			$feed = $item->get_feed();
 
-	// Custom stuff, avatars and extra titles
+			// Custom stuff, avatars and extra titles
 			if ( $feed->get_link() === 'https://twitter.com/rolle' ) :
 				$avatar = get_template_directory_uri() . '/images/avatar-twitter.jpg';
 				$title = '@rolle Twitterissä';

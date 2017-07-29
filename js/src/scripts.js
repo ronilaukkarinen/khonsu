@@ -90,7 +90,7 @@
     }
     });
 
-    // Prevent 100vh slides from "jumping" when browsing on mobile and address bar goes hidden
+    // Max height for hero, fix iOS scaling issues
     function greedyJumbotron() {
         var HEIGHT_CHANGE_TOLERANCE = 100; // Approximately URL bar height in Chrome on tablet
 
@@ -121,6 +121,7 @@
           $('.equal, .artist-image, .trakt-image').css( { 'height': ($('.col-min').outerHeight() + 'px' ) });
         }
 
+        // Max height for hero, fix iOS scaling issues
         $('.hero-single').each(greedyJumbotron);
       });
 
