@@ -18,7 +18,7 @@
 		<?php require_once( get_template_directory() . '/inc/simplepie/autoloader.php' );
 		$feed = new SimplePie();
 		$feed->set_cache_location( get_template_directory() . '/inc/simplepie/library/cache' );
-		$feed->set_cache_duration( 600 );
+		$feed->set_cache_duration( 7200 ); // 2 hours
 		$feed->set_feed_url( array(
 			'https://twitrss.me/twitter_user_to_rss/?user=rolle',
 			'https://geekylifestyle.com/feed/',
