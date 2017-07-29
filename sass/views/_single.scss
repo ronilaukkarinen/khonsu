@@ -6,7 +6,7 @@ body {
 
         // Some blog image magic
         .entry-content {
-          img.too-small {
+          img.too-small:not(.alignright, .alignleft, .aligncenter) {
             width: 100%;
             height: auto;
           }
