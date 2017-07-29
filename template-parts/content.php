@@ -15,7 +15,7 @@
     <div class="entry-stack">
 
       <div class="entry-stack-header">
-        <p><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta</time> <span class="dot-divider"></span> <?php echo khonsu_estimated_reading_time(); ?></p>
+        <p><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time> <span class="dot-divider"></span> <?php echo khonsu_estimated_reading_time(); ?></p>
       </div><!-- .entry-footer -->
 
       <div class="entry-stack-details">
