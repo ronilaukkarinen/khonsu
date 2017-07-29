@@ -32,7 +32,7 @@ get_header();
         endif;
       else :
         get_template_part( 'template-parts/block-four' );
-        include ( TEMPLATEPATH . '/template-parts/ads.php' );
+        get_template_part( 'template-parts/ads' );
         get_template_part( 'template-parts/block-three-most-popular' );
         get_template_part( 'template-parts/block-random' );
         get_template_part( 'template-parts/rss-feeds' );
