@@ -51,11 +51,10 @@
 
         copy( $lastfm_image, $local_coverart );
 
-
         if ( '' !== $lastfm_image ) :
           $local_coverart = get_home_url() . '/album-image-db/' . $lastfm_image_filename;
         else :
-          $local_coverart = get_home_url().'/content/themes/khonsu/images/default-album.png';
+          $local_coverart = get_template_directory_uri() . '/images/default-album.png';
         endif;
         ?>
 

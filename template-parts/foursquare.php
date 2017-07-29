@@ -12,6 +12,23 @@ $foursquare->SetAccessToken( getenv( 'FOURSQUARE_AUTH_TOKEN' ) );
 $endpoint = 'users/self';
 $source = $foursquare->GetPrivate( $endpoint );
 $json = json_decode( $source, true );
+$foursquare_cachefile = get_theme_file_path( 'inc/cache/foursquare.json' );
+$foursquare_cachetime = 43200; // Twelve hours
+
+if ( isset( $json['response']['user']['checkins'] ) ) :
+
+// If cache file does not exist, let's create it
+if ( ! file_exists( $foursquare_cachefile ) ) {
+    copy( $source, $foursquare_cachefile );
+}
+
+// Serve from the cache if it is younger than $foursquare_cachetime
+if ( file_exists( $foursquare_cachefile ) && time() - $foursquare_cachetime < filemtime( $foursquare_cachefile ) ) :
+    // Do nothing, it's cached
+else :
+    // If time ran out, copy over
+    copy( $source, $foursquare_cachefile );
+endif;
 
 $lat = $json['response']['user']['checkins']['items']['0']['venue']['location']['lat'];
 $lng = $json['response']['user']['checkins']['items']['0']['venue']['location']['lng'];
@@ -19,10 +36,19 @@ $name = $json['response']['user']['checkins']['items']['0']['venue']['name'];
 $city = $json['response']['user']['checkins']['items']['0']['venue']['location']['city'];
 $country = $json['response']['user']['checkins']['items']['0']['venue']['location']['country'];
 $category = $json['response']['user']['checkins']['items']['0']['venue']['categories'][0]['shortName'];
-$url = 'http://foursquare.com/v/'.$json['response']['user']['checkins']['items']['0']['venue']['id'];
+$url = 'http://foursquare.com/v/' . $json['response']['user']['checkins']['items']['0']['venue']['id'];
 
-$mapurl = 'https://maps.google.com/maps/api/staticmap?sensor=true&amp;center='.$lat.','.$lng.'&amp;maptype=roadmap&amp;size=600x400&amp;style=saturation:-50&amp;style=feature:landscape|visibility:simplified&amp;style=feature:road.highway|visibility:simplified&amp;sensor=false&amp;zoom=13&amp;markers=color:green|'.$lat.','.$lng.'|';
+$mapurl = 'https://maps.google.com/maps/api/staticmap?sensor=true&center=' . $lat . ',' . $lng . '&maptype=roadmap&size=600x400&style=saturation:-50&style=feature:landscape|visibility:simplified&style=feature:road.highway|visibility:simplified&sensor=false&zoom=13&markers=color:green|' . $lat . ',' . $lng . '|';
 
+function clean( $string ) {
+   $string = str_replace( ' ', '-', $string ); // Replaces all spaces with hyphens.
+   return preg_replace( '/[^A-Za-z0-9\-]/', '', $string ); // Removes special chars.
+}
+
+$local_mapfilename = clean( $lat . ',' . $lng . '.png' );
+$local_mapimage = get_theme_file_path( '/inc/cache/foursquare/' . $local_mapfilename );
+$local_mapurl = get_template_directory_uri() . '/inc/cache/foursquare/' . $local_mapfilename;
+copy( $mapurl, $local_mapimage );
 ?>
 
 <div class="col equal">
@@ -31,7 +57,7 @@ $mapurl = 'https://maps.google.com/maps/api/staticmap?sensor=true&amp;center='.$
 		<h2 class="feed-title foursquare"><a href="http://foursquare.com/rolle" target="_blank" title="Rollen Foursquare-profiili"><?php echo file_get_contents( esc_url( get_theme_file_path( '/svg/foursquare.svg' ) ) ); ?> <span><?php echo esc_html_e( 'Viimeksi käyty', 'khonsu' ); ?></span></a></h2>
 	</div><!-- .service -->
 
-	<div class="feed-item place equal" style="background-image: url('<?php echo $mapurl; ?>');">
+	<div class="feed-item place equal" style="background-image: url('<?php echo $local_mapurl; ?>');">
 
 		<div class="shade"></div>
 		<div class="info-overlay">
@@ -42,3 +68,6 @@ $mapurl = 'https://maps.google.com/maps/api/staticmap?sensor=true&amp;center='.$
 	</div>
 
 </div>
+
+<?php
+endif;
