@@ -32,9 +32,6 @@ endif;
 
   foreach ( $rss->entry->link as $link ) :
    $self_link = (string) $link['href'];
-   ?>
-   <a href="<?php echo $self_link; ?>"><?php echo $updated; ?></a>
-   <?php
-  endforeach;
+   ?><a href="<?php echo $self_link; ?>"><?php echo $updated; ?></a><?php endforeach;
 
 endif;
