@@ -12,6 +12,11 @@ $untappd_url = 'https://api.untappd.com/v4/user/info/rolle/?client_id=' . getenv
 $untappd_cachefile = get_theme_file_path( 'inc/cache/untappd.json' );
 $untappd_cachetime = 7200; // Two hours
 
+// If cache file does not exist, let's create it
+if ( ! file_exists( $untappd_cachefile ) ) {
+    copy( $untappd_url, $untappd_cachefile );
+}
+
 // Set up feed
 $json = file_get_contents( $untappd_cachefile );
 $feed = json_decode( $json, true );
@@ -25,11 +30,6 @@ $feed = json_decode( $json, true );
 <?php
 // Check that feed item exists
 if ( isset( $feed['response']['user']['checkins'] ) ) :
-
-// If cache file does not exist, let's create it
-if ( ! file_exists( $untappd_cachefile ) ) {
-    copy( $untappd_url, $untappd_cachefile );
-}
 
 // Serve from the cache if it is younger than $untappd_cachetime
 if ( file_exists( $untappd_cachefile ) && time() - $untappd_cachetime < filemtime( $untappd_cachefile ) ) :
