@@ -23,8 +23,17 @@
       var scroll = $(window).scrollTop();
       if (scroll >= 200) {
         $('.scroll-indicator').addClass('fadeout');
+
+        setTimeout( function(){
+          $('.scroll-indicator').hide();
+        }, 500 );
+
       } else {
         $('.scroll-indicator').removeClass('fadeout');
+
+        setTimeout( function(){
+          $('.scroll-indicator').show();
+        }, 500 );
       }
     }
   });  
