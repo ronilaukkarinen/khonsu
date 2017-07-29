@@ -16,6 +16,16 @@ require get_theme_file_path( '/inc/nav-walker.php' );
 require get_theme_file_path( '/inc/ads-post-type.php' );
 
 /**
+ * Clean local cached image filenames
+ *
+ * @param String $string String.
+ */
+function clean( $string ) {
+   $string = str_replace( ' ', '-', $string ); // Replaces all spaces with hyphens.
+   return preg_replace( '/[^A-Za-z0-9\-]/', '', $string ); // Removes special chars.
+}
+
+/**
  * Advertising stuff
  *
  * @link http://stackoverflow.com/q/25888630/1908141
@@ -109,7 +119,7 @@ add_shortcode( 'youtube_video', 'youtube_video_func' );
 
 function facebook_embed_func( $atts ) {
     extract( shortcode_atts( array(
-      'href' => ''
+      'href' => '',
     ), $atts));
    return '<div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -130,7 +140,7 @@ function spotifyplay_func( $atts ) {
       'src' => '',
       'width' => '500px',
       'height' => '580px',
-      'theme' => 'black'
+      'theme' => 'black',
    ), $atts) );
   return '<iframe src="https://embed.spotify.com/?uri='.$src.'" width="500" height="580" style="width:'.$width.'px;height:'.$height.';" frameborder="0" allowtransparency="true"></iframe>';
 }
