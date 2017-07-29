@@ -35,6 +35,7 @@
   <?php if ( ! is_single() ) : ?>
     <header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
 
+    <?php if ( ! is_404() ) : ?>
     <div class="shade shade-gradient"></div><!-- .shade -->
 
       <div class="video-container">
@@ -43,9 +44,9 @@
           <source src="<?php echo get_template_directory_uri(); ?>/video/trees.webm" type="video/webm">
         </video>
       </div>
+      <?php endif; ?>
 
-      <div class="header-inner">
-
+      <div class="header-inner<?php if ( is_404() ) : ?> screen-reader-text<?php endif; ?>">
         <div class="container">
           <div class="site-branding">
             <?php if ( is_front_page() && is_home() ) : ?>
@@ -61,9 +62,9 @@
         </div><!-- .site-branding -->
       </div><!-- .container -->
 
+      <?php if ( ! is_404() ) : ?>
       <div class="silver-lining">
         <div class="container">
-
           <nav id="nav">
 
             <?php wp_nav_menu( array(
@@ -79,9 +80,9 @@
               ) ); ?>
 
           </nav><!-- #site-navigation -->
-
         </div><!-- .container -->          
       </div><!-- .silver-lining -->
+      <?php endif; ?>
     </div><!-- .header-inner-->
 
     </header>

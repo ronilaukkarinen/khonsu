@@ -7,27 +7,22 @@
  * @package khonsu
  */
 
-get_header();
+get_header(); ?>
 
-get_template_part( 'template-parts/hero', get_post_type() ); ?>
+<section class="not-found">
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main">
-		<div class="container">
+	<div class="shade shade-gradient"></div>
+	<div class="video-container">
+		<video loop muted autoplay width="100%" height="100%" poster="<?php echo get_template_directory_uri(); ?>/video/trees.jpg">
+			<source src="<?php echo get_template_directory_uri(); ?>/video/trees.mp4" type="video/mp4">
+			<source src="<?php echo get_template_directory_uri(); ?>/video/trees.webm" type="video/webm">
+		</video>
+	</div>
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'khonsu' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'khonsu' ); ?></p>
-					<?php get_search_form(); ?>
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</div><!-- .container -->
-	</main><!-- #main -->
-</div><!-- #primary -->
+	<div class="container">
+		<h1><?php echo esc_html_e( 'Sivua ei löydy', 'khonsu' ); ?></h1>
+		<p><?php echo esc_html_e( 'Etsimääsi sivua ei ole olemassa, se on saatettu poistaa tai siirtää. Jos epäilet kyseessä olevan virhe,', 'khonsu' ); ?> <a href="mailto:roni.laukkarinen@gmail.com"><?php echo esc_html_e( 'ota yhteyttä Rolleen sähköpostitse', 'khonsu' ); ?></a>. <a href="<?php echo get_home_url(); ?>">Tästä etusivulle</a>.</p>
+	</div><!-- .container -->
+</section>
 
 <?php get_footer();
