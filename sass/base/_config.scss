@@ -28,7 +28,7 @@ $font-monospace: 'Menlo', 'Courier', monospace;
 
 // Font settings
 $font-min-size: 17px; // Minimum font size, on mobile (default: 16px)
-$font-max-size: 17px; // Maximum font size, on desktop
+$font-max-size: 19px; // Maximum font size, on desktop
 $font-base-line-height: 1.7; // Line height for paragraphs
 $font-base-line-height-elements: 1.7; // Line height for other elements like table cells and spans
 $headings-line-height-setup: force; // Force: all headings have same line height. Flexible: values are set separately in _typography.scss
@@ -44,7 +44,7 @@ $layout-max-width: 100%;
 $container-default-pad-x: 4rem; // Default padding between containers horizontally. Tweak _general.scss if needed.
 $container-default-pad-y: 4rem; // Default vertical padding for containers
 $grid-base-size: 1000px; // Layout container max width on desktop. This is default .container size
-$article-max-width: 670px; // Max width for articles
+$article-max-width: 700px; // Max width for articles
 $container-mobile: 480px;
 $container-desktop: 1200px;
 $container-ipad: 770px;
