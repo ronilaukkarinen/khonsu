@@ -2,21 +2,7 @@ body {
   &.page-template-template-haku,
   &.page-template {
     .site-content {
-      background: #fafafa;
-
-      form {
-        input#s {
-          width: 100%;
-          max-width: 400px;
-        }
-
-        #searchsubmit {
-          border-radius: 2px;
-          background: $color-links;
-          color: #fff;
-          border-color: $color-links;
-        }
-      }
+      background: #fafafa;      
     }
   }
 
