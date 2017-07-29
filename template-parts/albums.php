@@ -15,15 +15,15 @@
 
       <?php
       // Fetch Last.fm album data and set up simple cache
-      $lastfm_url = 'https://ws.audioscrobbler.com/2.0/?method=user.getTopAlbums&user=rolle-&api_key=' . getenv( 'LASTFM_API_KEY' ) . '&period=7day&limit=4';
+      $albums_url = 'https://ws.audioscrobbler.com/2.0/?method=user.getTopAlbums&user=rolle-&api_key=' . getenv( 'LASTFM_API_KEY' ) . '&period=7day&limit=4';
       $albums_cachefile = get_theme_file_path( 'inc/cache/albums.xml' );
       $albums_cachetime = 36000; // Ten hours
 
-      if ( strpos( file_get_contents( $lastfm_url ), '<?xml' ) !== false ) :
+      if ( strpos( file_get_contents( $albums_url ), '<?xml' ) !== false ) :
 
         // If cache file does not exist, let's create it
         if ( ! file_exists( $albums_cachefile ) ) {
-          copy( $lastfm_url, $albums_cachefile );
+          copy( $albums_url, $albums_cachefile );
         }
 
         // Serve from the cache if it is younger than $albums_cachetime
@@ -31,11 +31,11 @@
             // Do nothing, it's cached
         else :
             // If time ran out, copy over
-            copy( $lastfm_url, $albums_cachefile );
+            copy( $albums_url, $albums_cachefile );
         endif;
 
         // Set up feed
-        $lastfm_rss = simplexml_load_file( $lastfm_url );
+        $lastfm_rss = simplexml_load_file( $albums_url );
         $lastfm_list = $lastfm_rss->xpath( '//album' );
 
       foreach ( $lastfm_list as $lastfm_item ) :

@@ -5,7 +5,10 @@
  * @package khonsu
  */
 
-$url = 'https://trakt.tv/users/rolle/history.atom?slurm=' . getenv( 'TRAKT_API_KEY' ); ?>
+$trakt_url = 'https://trakt.tv/users/rolle/history.atom?slurm=' . getenv( 'TRAKT_API_KEY' ); 
+$trakt_cachefile = get_theme_file_path( 'inc/cache/trakt.xml' );
+$trakt_cachetime = 10800; // Three hours
+?>
 
 <div class="col equal col-trakt trakt-default">
 	<div class="trakt service">
@@ -13,8 +16,22 @@ $url = 'https://trakt.tv/users/rolle/history.atom?slurm=' . getenv( 'TRAKT_API_K
 
 		<div class="feed-item">
 			<?php
-			if ( strpos( file_get_contents( $url ), '<?xml' ) !== false ) :
-				$rss = simplexml_load_file( $url );
+			if ( strpos( file_get_contents( $trakt_url ), '<?xml' ) !== false ) :
+
+				// If cache file does not exist, let's create it
+        if ( ! file_exists( $trakt_cachefile ) ) {
+          copy( $trakt_url, $trakt_cachefile );
+        }
+
+				// Serve from the cache if it is younger than $trakt_cachetime
+        if ( file_exists( $trakt_cachefile ) && time() - $trakt_cachetime < filemtime( $trakt_cachefile ) ) :
+            // Do nothing, it's cached
+        else :
+            // If time ran out, copy over
+        	copy( $trakt_url, $trakt_cachefile );
+        endif;
+
+				$rss = simplexml_load_file( $trakt_cachefile );
 				$list = $rss->xpath( '//@url' );
 				$prepared_urls = array();
 
