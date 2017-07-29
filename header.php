@@ -39,7 +39,7 @@
     <div class="shade shade-gradient"></div><!-- .shade -->
 
       <div class="video-container">
-        <video loop muted autoplay width="100%" height="100%" poster="<?php echo get_template_directory_uri(); ?>/video/trees.jpg">
+        <video loop muted autoplay poster="<?php echo get_template_directory_uri(); ?>/video/trees.jpg">
           <source src="<?php echo get_template_directory_uri(); ?>/video/trees.mp4" type="video/mp4">
           <source src="<?php echo get_template_directory_uri(); ?>/video/trees.webm" type="video/webm">
         </video>

@@ -84,7 +84,7 @@
 					<div class="meta-avatar" style="background-image: url('<?php echo $avatar; ?>');"></div>
 					<div class="meta-title-stuff">
 						<h5><a href="<?php echo $feed->get_link(); ?>"><?php echo $title; ?></a></h5>
-						<h6><time><?php echo human_time_diff( $item->get_date( 'U' ), current_time( 'timestamp' ) ) . ' sitten'; ?></time></h6>
+						<h6><time datetime="<?php $item->get_date( 'c' ); ?>"><?php echo human_time_diff( $item->get_date( 'U' ), current_time( 'timestamp' ) ) . ' sitten'; ?></time></h6>
 					</div>
 				</div>
 			</div>
@@ -92,6 +92,4 @@
 		<?php endforeach; ?>
 
 	</div><!-- .content -->
-
 </div><!-- .block -->
-
