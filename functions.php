@@ -14,6 +14,7 @@ require get_theme_file_path( '/inc/functions.php' );
 require get_theme_file_path( '/inc/menus.php' );
 require get_theme_file_path( '/inc/nav-walker.php' );
 require get_theme_file_path( '/inc/ads-post-type.php' );
+require get_theme_file_path( '/inc/gravityforms.php' );
 
 /**
  * Clean local cached image filenames
