@@ -6,7 +6,7 @@
  */
 
 $cache = 'lastfm.recent.cache';
-$seconds_before_update = 180;
+$seconds_before_update = 1800;
 $number_of_songs = 1;
 $socket_timeout = 3; // Seconds to wait for response from audioscrobbler
 ?>
