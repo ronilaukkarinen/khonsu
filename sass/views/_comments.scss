@@ -80,6 +80,12 @@ body {
         color: $color-body;
         opacity: .8;
         margin-top: 0;
+
+        a.comment-edit-link {
+          font-size: 13px;
+          opacity: .5;
+          color: #222;
+        }
       }
 
       .avatar {
