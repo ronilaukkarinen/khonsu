@@ -7,15 +7,18 @@
  * @package khonsu
  */
 
+// Fetch Untappd data and set up simple cache
 $untappd_url = 'https://api.untappd.com/v4/user/info/rolle/?client_id=' . getenv( 'UNTAPPD_CLIENT_ID' ) . '&client_secret=' . getenv( 'UNTAPPD_CLIENT_SECRET' );
-$cachefile = get_theme_file_path( 'inc/untappd/cache/untappd.json' );
-$cachetime = 7200; // Two hours
+$untappd_cachefile = get_theme_file_path( 'inc/cache/untappd.json' );
+$untappd_cachetime = 7200; // Two hours
 
-if ( ! file_exists( $cachefile ) ) {
-    copy( $untappd_url, $cachefile );
+// If cache file does not exist, let's create it
+if ( ! file_exists( $untappd_cachefile ) ) {
+    copy( $untappd_url, $untappd_cachefile );
 }
 
-$json = file_get_contents( $cachefile );
+// Set up feed
+$json = file_get_contents( $untappd_cachefile );
 $feed = json_decode( $json, true );
 ?>
 
@@ -28,12 +31,12 @@ $feed = json_decode( $json, true );
 // Check that feed item exists
 if ( isset( $feed['response']['user']['checkins'] ) ) :
 
-// Serve from the cache if it is younger than $cachetime
-if ( file_exists( $cachefile ) && time() - $cachetime < filemtime( $cachefile ) ) :
+// Serve from the cache if it is younger than $untappd_cachetime
+if ( file_exists( $untappd_cachefile ) && time() - $untappd_cachetime < filemtime( $untappd_cachefile ) ) :
     // Do nothing, it's cached
 else :
     // If time ran out, copy over
-    copy( $untappd_url, $cachefile );
+    copy( $untappd_url, $untappd_cachefile );
 endif;
 
 foreach ( $feed['response']['user']['checkins']['items'] as $i ) : ?>

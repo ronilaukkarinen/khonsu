@@ -14,11 +14,29 @@
     <div class="feed-item album-list">
 
       <?php
+      // Fetch Last.fm album data and set up simple cache
       $lastfm_url = 'https://ws.audioscrobbler.com/2.0/?method=user.getTopAlbums&user=rolle-&api_key=' . getenv( 'LASTFM_API_KEY' ) . '&period=7day&limit=4';
+      $albums_cachefile = get_theme_file_path( 'inc/cache/albums.xml' );
+      $albums_cachetime = 36000; // Ten hours
 
       if ( strpos( file_get_contents( $lastfm_url ), '<?xml' ) !== false ) :
-      $lastfm_rss = simplexml_load_file( $lastfm_url );
-      $lastfm_list = $lastfm_rss->xpath( '//album' );
+
+        // If cache file does not exist, let's create it
+        if ( ! file_exists( $albums_cachefile ) ) {
+          copy( $lastfm_url, $albums_cachefile );
+        }
+
+        // Serve from the cache if it is younger than $albums_cachetime
+        if ( file_exists( $albums_cachefile ) && time() - $albums_cachetime < filemtime( $albums_cachefile ) ) :
+            // Do nothing, it's cached
+        else :
+            // If time ran out, copy over
+            copy( $lastfm_url, $albums_cachefile );
+        endif;
+
+        // Set up feed
+        $lastfm_rss = simplexml_load_file( $lastfm_url );
+        $lastfm_list = $lastfm_rss->xpath( '//album' );
 
       foreach ( $lastfm_list as $lastfm_item ) :
 
@@ -26,24 +44,24 @@
         $lastfm_image_filename = basename( $lastfm_image );
 
         if ( getenv( 'WP_ENV' ) === 'development' || file_exists( dirname( __FILE__ ) . '/.dev' ) ) {
-          $paikallinen_albumkuva = '/var/www/rollemaa/album-image-db/' . $lastfm_image_filename;
+          $local_coverart = '/var/www/rollemaa/album-image-db/' . $lastfm_image_filename;
         } else {
-          $paikallinen_albumkuva = '/var/www/rollemaa.org/public_html/album-image-db/' . $lastfm_image_filename;
+          $local_coverart = '/var/www/rollemaa.fi/public_html/album-image-db/' . $lastfm_image_filename;
         }
 
-        copy( $lastfm_image, $paikallinen_albumkuva );
+        copy( $lastfm_image, $local_coverart );
 
 
         if ( '' !== $lastfm_image ) :
-          $albumikuva = get_home_url().'/album-image-db/'.$lastfm_image_filename;
+          $local_coverart = get_home_url() . '/album-image-db/' . $lastfm_image_filename;
         else :
-          $albumikuva = get_home_url().'/content/themes/newera/images/default-album.png';
+          $local_coverart = get_home_url().'/content/themes/khonsu/images/default-album.png';
         endif;
         ?>
 
         <div class="album">
           <a class="albumlink" href="<?php echo $lastfm_item->url; ?>" title="<?php echo $lastfm_item->artist->name; ?> - <?php echo $lastfm_item->name; ?> kuunneltu <?php echo $lastfm_item->playcount; ?> kertaa viikon sisään">
-            <img class="album" src="<?php echo $albumikuva; ?>" alt="Levy: <?php echo $lastfm_item->artist->name; ?> - <?php echo $lastfm_item->name; ?>" />
+            <img class="album" src="<?php echo $local_coverart; ?>" alt="Levy: <?php echo $lastfm_item->artist->name; ?> - <?php echo $lastfm_item->name; ?>" />
           </a>
         </div>
 
