@@ -1,0 +1,145 @@
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes fadeOutUpScroll {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes mousePointer {
+  0% {
+    opacity: 0;
+    top: 20%;
+  }
+
+  20% {
+    opacity: 1;
+    top: 20%;
+  }
+
+  40% {
+    opacity: 1;
+    top: 20%;
+  }
+
+  60% {
+    opacity: 1;
+    top: 70%;
+  }
+
+  61% {
+    opacity: 1;
+    top: 70%;
+  }
+
+  67% {
+    opacity: 0;
+    top: 70%;
+  }
+
+  100% {
+    opacity: 0;
+    top: 70%;
+  }
+}
+
+.scroll-indicator {
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+  z-index: 3;
+  opacity: .5;
+  transition: all .55s;
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &.fadeout {
+    animation: fadeOutUpScroll 500ms;
+    opacity: 0;
+  }
+
+  .animated-mouse {
+    display: block;
+  }
+
+  .swiping-hand {
+    width: 35px;
+    height: 55px;
+    display: none;
+    animation: fadeOutUp 2s infinite;
+
+    svg {
+      width: 52px;
+      height: 65px;
+      position: relative;
+      fill: #fff;
+    }
+  }
+
+  @media(max-width: 760px) {
+    .animated-mouse {
+      display: none;
+    }
+
+    .swiping-hand {
+      display: block;
+    }
+  }
+}
+
+.animated-mouse {
+  @include horizontal-align();
+  width: 27px;
+  height: 47px;
+  border: 2px solid #fff;
+  border-radius: 14px;
+  background: transparent;
+  position: absolute;
+  bottom: 5px;
+
+  a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media(max-width: $container-mobile) {
+    display: none;
+  }
+
+  .animated-mouse-pointer {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background: #fff;
+    left: 49%;
+    top: 70%;
+    transform: translate(-50%, 0);
+    animation-name: mousePointer;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-fill-mode: backwards;
+    animation-delay: .5s;
+  }
+}

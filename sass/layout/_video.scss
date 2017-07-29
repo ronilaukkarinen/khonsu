@@ -1,0 +1,27 @@
+.video-container {
+  background: transparent;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  max-height: $header-height;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+
+  video {
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    width: 100vw;
+    // display: none;
+
+    // Vertical and Horizontal center
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @media(max-width: $container-ipad) {
+      display: none;
+    }
+  }
+}

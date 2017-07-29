@@ -1,0 +1,32 @@
+body {
+  #page {
+    .template-haku {
+      h2 {
+        @include responsive-font(3vw, 20px, 24px);
+        margin-bottom: 20px;
+        color: #222;
+
+        &.title-grouped {
+          margin-bottom: 10px;
+        }
+      }
+
+      h4 {
+        font-size: 19px;
+        font-weight: 400;
+        color: #777;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+
+      #searchsubmit {
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+
+      p {
+        margin-top: 0;
+      }
+    }
+  }
+}

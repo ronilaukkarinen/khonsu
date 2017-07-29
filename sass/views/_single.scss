@@ -1,0 +1,138 @@
+body {
+  &.single-post {
+    .site-content {
+      .post {
+        margin-bottom: 0;
+
+        // Some blog image magic
+        .entry-content {
+          img.too-small {
+            width: 100%;
+            height: auto;
+          }
+
+          .minikuvateksti {
+            display: none;
+          }
+        }
+
+        a.button {
+          box-shadow: none;
+          text-shadow: none;
+        }
+
+        .entry-content,
+        .container.container-article {
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+      }
+
+      .author-info {
+        overflow: hidden;
+        border-top: 1px solid #f2f2f2;
+        padding-top: 30px;
+        margin-top: 60px;
+
+        @media(max-width: $container-mobile) {
+          text-align: center;
+        }
+
+        .button {
+          padding: 4px 25px;
+          font-size: 13px;
+        }
+
+        .author-col-avatar {
+          @include column(1/6);
+
+          @media(max-width: 600px) {
+            @include column(1.2/6);
+          }
+
+          @media(max-width: $container-mobile) {
+            @include stack();
+            margin-bottom: 30px;
+          }          
+
+          img {
+            width: 80px;
+            height: 80px;
+            max-width: 80px;
+            min-width: 80px;
+            border-radius: 50%;
+
+            @media(max-width: 600px) {
+              width: 60px;
+              max-width: 60px;
+              min-width: 60px;              
+              height: 60px;
+            }
+
+            @media(max-width: $container-mobile) {
+              width: 100px;
+              max-width: 100px;
+              min-width: 100px;
+              height: 100px;
+            }
+          }
+        }
+
+        .author-col-info {
+          @include column(5/6);
+
+          @media(max-width: 600px) {
+            @include column(4.8/6);
+          }
+
+          @media(max-width: $container-mobile) {
+            @include stack();
+          }
+        }
+
+        h3 {
+          font-size: 18px;
+          margin-top: 0;
+          margin-bottom: 10px;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 14px;
+          color: #666;
+
+          &.description {
+            margin-top: 0;
+            margin-bottom: 15px;
+
+            @media(max-width: $container-mobile) {
+              margin-bottom: 20px;
+            }
+          }
+
+          &.button-paragraph {
+            margin: 0;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    #dynamic-footer {
+      .site-footer {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  .site-content {
+    .container {
+      &.container-article {
+        max-width: $article-max-width;
+      }
+    }
+  }
+}

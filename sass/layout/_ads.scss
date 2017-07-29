@@ -1,0 +1,137 @@
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+body {
+  #page {
+    .site-content {
+
+      .advertisement {
+        overflow: visible;
+        position: relative;
+        opacity: 1;
+
+        @media(max-width: 1220px) {
+          overflow: hidden;
+
+          p {
+            width: 93%;
+          }
+
+          * {
+            &:after {
+              display: none;
+            }
+          }          
+        }
+
+        &.fadeout {
+          animation: fadeOutUpScroll 500ms;
+          opacity: 0;
+        }
+
+        .close {
+          position: absolute;
+          top: 18px;
+          right: 0;
+
+          svg {
+            fill: #999;
+            transition: .22s all;
+          }
+
+          &:hover {
+            cursor: pointer;
+
+            svg {
+              fill: #222;
+            }
+          }
+        }
+      }
+
+      .ad-top {
+        padding: 0;
+        border-top: 1px solid #d9d9d9;
+        border-bottom: 1px solid #d9d9d9;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 60px;
+
+        p {
+          font-size: 13px;
+          color: #999;
+          font-weight: 400;
+
+          strong {
+            font-weight: 500;
+          }
+
+          a {
+            @extend .link;
+            color: #999;
+          }
+        }
+      }
+
+      .ylamainos {
+        @media (max-width: 740px) {
+          display: none;
+        }
+      }
+
+      .keskimainos-desktop {
+        max-width: 730px;
+
+        @media (max-width: 740px) {
+          display: none;
+        }
+      }
+
+      .keskimainos-mobile {
+        max-width: 200px;
+        overflow: hidden !important;
+        display: none !important;
+
+        @media (min-width: 470px) {
+          display: none;
+        }
+      }
+
+      .keskimainos-ipad {
+        max-width: 470px;
+
+        @media (max-width: 470px) {
+          display: none;
+        }
+
+        @media (min-width: 740px) {
+          display: none;
+        }
+      }
+
+      .keskimainos {
+        margin: 20px auto;
+        overflow: hidden;
+      }
+
+      .footermainos {
+        max-width: 980px;
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+
+        @media (max-width: 990px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
