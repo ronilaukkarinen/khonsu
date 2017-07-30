@@ -114,6 +114,14 @@ body {
         @include background-cover();
         position: relative;
 
+        @media(max-width: $container-ipad) {
+          min-height: 200px;
+
+          .image-full-height {
+            min-height: 200px;
+          }
+        }
+
         .fit-image {
           width: 100%;
           height: auto;
