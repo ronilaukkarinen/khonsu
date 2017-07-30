@@ -16,9 +16,9 @@
 	<div class="content">
 
 		<?php 
-		require_once( get_template_directory() . '/inc/simplepie/autoloader.php' );
+		require_once( get_theme_file_path( '/inc/simplepie/autoloader.php' ) );
 		$feed = new SimplePie();
-		$feed->set_cache_location( get_template_directory() . '/inc/simplepie/library/cache' );
+		$feed->set_cache_location( get_theme_file_path( '/inc/simplepie/library/cache' ) );
 		$feed->set_cache_duration( 7200 ); // 2 hours
 		$feed->set_feed_url( array(
 			'https://twitrss.me/twitter_user_to_rss/?user=rolle',
