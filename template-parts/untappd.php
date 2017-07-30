@@ -28,10 +28,10 @@ $feed = json_decode( $json, true );
   </div><!-- .service -->
 
   <?php
-// Check that feed item exists
+  // Check that feed item exists
   if ( isset( $feed['response']['user']['checkins'] ) ) :
 
-// Serve from the cache if it is younger than $untappd_cachetime
+    // Serve from the cache if it is younger than $untappd_cachetime
     if ( file_exists( $untappd_cachefile ) && time() - $untappd_cachetime < filemtime( $untappd_cachefile ) ) :
     // Do nothing, it's cached
     else :
@@ -39,6 +39,7 @@ $feed = json_decode( $json, true );
       copy( $untappd_url, $untappd_cachefile );
     endif;
 
+    $count = 0;
     foreach ( $feed['response']['user']['checkins']['items'] as $i ) : ?>
 
     <div class="feed-item equal beer" style="background-image: url('<?php if ( ! empty( $i['media']['items'] ) ) { foreach ( $i['media']['items'] as $media ) { echo $media['photo']['photo_img_md']; } } else { echo get_template_directory_uri() . '/images/default-beer.jpg'; } ?>');">
@@ -51,6 +52,11 @@ $feed = json_decode( $json, true );
     </div><!-- .feed-item-->
 
     <?php
+    $count++;
+    if ( 1 === $count ) :
+      break;
+    endif;
+
   endforeach;
   else : ?>
 
@@ -63,7 +69,7 @@ $feed = json_decode( $json, true );
 
   </div><!-- .feed-item-->
 
-  <?php 
+  <?php
 endif;
 ?>
 
