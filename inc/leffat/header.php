@@ -17,7 +17,7 @@
 	<meta property="article:publisher" content="https://www.facebook.com/rollenleffat">
 	<meta property="og:locale" content="fi_FI" />
 	<meta property="og:site_name" content="Rollen leffablogi" />
-	<meta property="og:url" content="<?php if ( true === $hakusivu ) : ?>https://www.rollemaa.org/leffat<?php else : echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; endif; ?>" />
+	<meta property="og:url" content="<?php if ( true === $hakusivu ) : ?>https://www.rollemaa.fi/leffat<?php else : echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; endif; ?>" />
 
 	<?php if ( true === $hakusivu ) :
 	$host = getenv( 'DB_HOST' );
@@ -97,8 +97,8 @@
 
   	$imdb_url_short = $row['imdb_url_short'];
   	$leffaid = explode( '/', $imdb_url_short );
-  	$backdrop_image = 'https://www.rollemaa.org/leffa/poster-image-db/' .$leffaid[0]. '-backdrop.jpg';
-  	$poster_image = 'https://www.rollemaa.org/leffa/poster-image-db/' .$leffaid[0]. '.jpg';
+  	$backdrop_image = 'https://www.rollemaa.fi/leffa/poster-image-db/' .$leffaid[0]. '-backdrop.jpg';
+  	$poster_image = 'https://www.rollemaa.fi/leffa/poster-image-db/' .$leffaid[0]. '.jpg';
   	$title = $row['title'];
   	$review = $row['review'];
     preg_match( '/^([^.!?]*[\.!?]+){0,2}/', strip_tags( $text ), $abstract );
@@ -120,7 +120,7 @@
  <?php endif; ?>
 
  <?php if ( true === $hakusivu ) : ?>
-   <meta property="og:image" content="https://www.rollemaa.org/leffat.jpg" />
+   <meta property="og:image" content="https://www.rollemaa.fi/leffat.jpg" />
    <meta property="og:title" content="Rollen leffablogi - Elokuvat, elokuva-arviot" />
    <meta name="description" content="Kepeät elokuva-arviot leffoista, joita Rolle tykkää katsoa. Jokainen elokuva arvioidaan lopputekstien jälkeen. Jo yli 2000 arvioitua elokuvaa." />
    <meta property="og:description" content="Kepeät elokuva-arviot leffoista, joita Rolle tykkää katsoa. Jokainen elokuva arvioidaan lopputekstien jälkeen. Jo yli 2000 arvioitua elokuvaa." />

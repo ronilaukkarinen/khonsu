@@ -51,7 +51,7 @@
 </div>
 
 <a class="adminlinkki" href="<?php echo admin_url(); ?>/tools.php?page=wp_movie_ratings_management">Admin</a>
-<a href="<?php echo get_home_url(); ?>" id="rollemaa">Rollemaa.org</a>
+<a href="<?php echo get_home_url(); ?>" id="rollemaa">rollemaa.fi</a>
 
 <?php if ( getenv( 'WP_ENV' ) === 'production' ) : ?>
 	<script>

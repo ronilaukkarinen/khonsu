@@ -67,7 +67,7 @@ get_header();
 
             <div class="author-col author-col-info">
               <h3>Roni Laukkarinen</h3>
-              <p class="description"><?php _e( 'Kirjoittaja on ' . khonsu_calculate_age ( '1988/11/01' ) .'-vuotias elämäntapanörtti, ammatiltaan digialan <a href="http://www.dude.fi">yrittäjä</a>, verkkosivujen tekijä, myös sosiaalisen median asiantuntija ja koukussa kirjoittamiseen 5-vuotiaasta. Suurin osa päivästä kuluu hevimusiikin ja koodaamisen parissa, mutta arkea piristyttää myös vaimo ja kaksi lasta. <a href="http://twitter.com/rolle" target="_blank">Twitter</a>, <a href="http://www.rollemaa.org/leffat">leffat</a> ja <a href="http://www.huurteinen.fi" target="_blank">erikoisoluet</a> lähellä sydäntä.', 'khonsu' ); ?></p>
+              <p class="description"><?php _e( 'Kirjoittaja on ' . khonsu_calculate_age ( '1988/11/01' ) .'-vuotias elämäntapanörtti, ammatiltaan digialan <a href="http://www.dude.fi">yrittäjä</a>, verkkosivujen tekijä, myös sosiaalisen median asiantuntija ja koukussa kirjoittamiseen 5-vuotiaasta. Suurin osa päivästä kuluu hevimusiikin ja koodaamisen parissa, mutta arkea piristyttää myös vaimo ja kaksi lasta. <a href="http://twitter.com/rolle" target="_blank">Twitter</a>, <a href="http://www.rollemaa.fi/leffat">leffat</a> ja <a href="http://www.huurteinen.fi" target="_blank">erikoisoluet</a> lähellä sydäntä.', 'khonsu' ); ?></p>
 
               <p class="button-paragraph"><a class="button" href="<?php echo get_page_link(2768); ?>"><?php _e('Lue Rollesta lisää', 'khonsu'); ?></a></p>
             </div>

@@ -44,7 +44,7 @@ $trakt_cachetime = 10800; // Three hours
         if ( getenv( 'WP_ENV' ) === 'development' || file_exists( dirname( __FILE__ ) . '/.dev' ) ) {
           $paikallinen_traktkuva = '/var/www/rollemaa/trakt-image-db/' . $trakt_image_filename;
         } else {
-          $paikallinen_traktkuva = '/var/www/rollemaa.org/public_html/trakt-image-db/' .$trakt_image_filename;
+          $paikallinen_traktkuva = '/var/www/rollemaa.fi/public_html/trakt-image-db/' .$trakt_image_filename;
         }
 
         copy( $image, $paikallinen_traktkuva );

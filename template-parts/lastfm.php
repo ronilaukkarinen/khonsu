@@ -76,7 +76,7 @@ $socket_timeout = 3; // Seconds to wait for response from audioscrobbler
         if ( getenv( 'WP_ENV' ) == 'development' || file_exists( dirname( __FILE__ ) . '/.dev' ) ) :
           $paikallinen_artistikuva = '/var/www/rollemaa/artist-image-db/' . $artist_image_filename;
         else :
-          $paikallinen_artistikuva = '/var/www/rollemaa.org/public_html/artist-image-db/' . $artist_image_filename;
+          $paikallinen_artistikuva = '/var/www/rollemaa.fi/public_html/artist-image-db/' . $artist_image_filename;
         endif;
 
         copy( $img, $paikallinen_artistikuva );

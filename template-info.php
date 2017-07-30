@@ -41,7 +41,7 @@ get_header(); ?>
 
 							<p><?php _e( 'Arkeni kuluu <a href="'.get_home_url().'/avainsana/viittomakieli">viittomakielisessä</a> ympäristössä, ja elämä on haasteita täynnä vaimon <a href="'.get_home_url().'/avainsana/kuurosokeus">kuurosokeutta</a> aiheuttavan sairauden kanssa. Menneisyydessä on myös joutunut kamppailemaan omaa ja puolison <a href="'.get_home_url().'/avainsana/masennus">masennukseksi</a> diagnisoitua mielisairautta vastaan. Rollemaan lisäksi vaikutan pitkin Internetin pientä maailmaa ja minut löytää aika lailla kaikkialta netissä.', 'khonsu' ); ?></p>
 
-							<?php include ( TEMPLATEPATH . '/template-parts/ads-google-middle.php' ); ?>	  	
+							<?php include( TEMPLATEPATH . '/template-parts/ads-google-middle.php' ); ?>	  	
 
 							<h2><?php _e( 'Bloggaaminen', 'khonsu' ); ?></h2>
 
@@ -56,9 +56,9 @@ get_header(); ?>
 							<p><?php _e( 'Rollemaa ei ole ainoa paikka, jonne bloggaan. Kirjoittelen epäsäännöllisen säännöllisesti myös ainakin seuraaviin blogeihin:', 'khonsu' ); ?></p>
 
 							<ul>
-								<li><s><a href="https://www.rollemaa.org/pikkuinen"><?php _e( 'Pikkuisen oma blogi', 'khonsu' ); ?></a> - <?php _e( 'Lasteni blogi', 'khonsu' ); ?></s></li>
-								<li><a href="https://www.rollemaa.org/leffat"><?php _e( 'Rollen leffat', 'khonsu' ); ?></a> - <?php _e( 'Kevyitä elokuva-arvosteluja', 'khonsu' ); ?></li>
-								<li><a href="https://unet.rollemaa.org"><?php _e( 'Rollen unipäiväkirja', 'khonsu' ); ?></a> - <?php _e( 'Nähtyjä unia', 'khonsu' ); ?></li>
+								<li><s><a href="https://www.rollemaa.fi/pikkuinen"><?php _e( 'Pikkuisen oma blogi', 'khonsu' ); ?></a> - <?php _e( 'Lasteni blogi', 'khonsu' ); ?></s></li>
+								<li><a href="https://www.rollemaa.fi/leffat"><?php _e( 'Rollen leffat', 'khonsu' ); ?></a> - <?php _e( 'Kevyitä elokuva-arvosteluja', 'khonsu' ); ?></li>
+								<li><a href="https://unet.rollemaa.fi"><?php _e( 'Rollen unipäiväkirja', 'khonsu' ); ?></a> - <?php _e( 'Nähtyjä unia', 'khonsu' ); ?></li>
 								<li><s><a href="https://www.adminlabs.com/blogi"><?php _e( 'AdminLabs (ennen problemsolv.in)', 'khonsu' ); ?></a> - <?php _e( 'Englanninkielinen tietotekniikka-ongelmanratkaisublogi', 'khonsu' ); ?></s></li>
 								<li><a href="https://www.dude.fi/blogi"><?php _e( 'Digitoimisto Dude Oy', 'khonsu' ); ?></a> - <?php _e( 'Yritykseni blogi', 'khonsu' ); ?></li>
 								<li><a href="https://www.huurteinen.fi"><?php _e( 'Huurteinen.fi', 'khonsu' ); ?></a> - <?php _e( 'Huhtikuussa 2014 perustettu olutblogi', 'khonsu' ); ?></li>
@@ -69,7 +69,7 @@ get_header(); ?>
 
 							<h2><?php _e( 'Yhteystiedot', 'khonsu' ); ?></h2>
 
-							<p><?php _e( 'Minut tavoittaa parhaiten netistä. Olen rekisteröitynyt yli 60 sosiaalisen median palveluun, joista eniten käytän <a href="http://twitter.com/rolle">Twitteriä</a>. Paljon vaivaa ei tarvitse nähdä jos minuun haluaa saada yhteyttä, sillä yhteystietoni löytyvät netistä jo varmasti osoitetta ja puhelinnumeroa myöten parin klikkauksen kautta. Ota rohkeasti yhteyttä, jos on asiaa! Tweettaa tai pistä sähköpostia <a href="mailto:rolle@rollemaa.org">rolle@rollemaa.org</a> tai työasioissa <a href="mailto:roni@dude.fi">roni@dude.fi</a>.', 'khonsu' ); ?></p>
+							<p><?php _e( 'Minut tavoittaa parhaiten netistä. Olen rekisteröitynyt yli 60 sosiaalisen median palveluun, joista eniten käytän <a href="http://twitter.com/rolle">Twitteriä</a>. Paljon vaivaa ei tarvitse nähdä jos minuun haluaa saada yhteyttä, sillä yhteystietoni löytyvät netistä jo varmasti osoitetta ja puhelinnumeroa myöten parin klikkauksen kautta. Ota rohkeasti yhteyttä, jos on asiaa! Tweettaa tai <a href="mailto:roni.laukkarinen@gmail.com">pistä sähköpostia</a> (työasioissa <a href="mailto:roni@dude.fi">roni@dude.fi</a>).', 'khonsu' ); ?></p>
 
 							<p><?php _e( 'Rollemaa löytyy muuten <a href="http://www.facebook.com/rollemaa">Facebookistakin</a>, mutta sinne tulee lähinnä Instagram-kuvia ja uusia bloggauksia. Jos tahdot pysyä kärryillä sitäkin kautta, <a href="http://www.facebook.com/rollemaa">tykkää ihmeessä</a>.', 'khonsu' ); ?></p>
 

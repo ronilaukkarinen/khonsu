@@ -31,7 +31,7 @@ endif;
   <div class="ending">
     <div class="cols-ending">
       <div class="col-ending col-ending-info">
-        <p class="site-info"><a href="https://profiles.wordpress.org/rolle" class="thanks-wordpress" aria-label="WordPress-logo"><?php echo file_get_contents( esc_url( get_theme_file_path( '/svg/wordpress.svg' ) ) ); ?></a><span class="info">Tämä on Rollemaa.org v22-<?php include( get_theme_file_path( 'inc/github.php' ) ); ?>, koodinimeltään "Khonsu", jonka moottorina toimii WordPress. Puhdasta käsityötä alusta loppuun. Koodatessa soi eniten <strong>Khonsu</strong>n <a href="https://www.last.fm/music/Khonsu/The+Xun+Protectorate">The Xun Protectorate</a>.</span></p>
+        <p class="site-info"><a href="https://profiles.wordpress.org/rolle" class="thanks-wordpress" aria-label="WordPress-logo"><?php echo file_get_contents( esc_url( get_theme_file_path( '/svg/wordpress.svg' ) ) ); ?></a><span class="info">Tämä on rollemaa.fi v22-<?php include( get_theme_file_path( 'inc/github.php' ) ); ?>, koodinimeltään "Khonsu", jonka moottorina toimii WordPress. Puhdasta käsityötä alusta loppuun. Koodatessa soi eniten <strong>Khonsu</strong>n <a href="https://www.last.fm/music/Khonsu/The+Xun+Protectorate">The Xun Protectorate</a>.</span></p>
       </div>
 
       <div class="col-ending col-ending-copyright">
