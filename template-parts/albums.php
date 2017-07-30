@@ -23,16 +23,14 @@
 
         // If cache file does not exist, let's create it
         if ( ! file_exists( $albums_cachefile ) ) {
+          touch( $albums_cachefile );
           copy( $albums_url, $albums_cachefile );
         }
 
-        // Serve from the cache if it is younger than $albums_cachetime
-        if ( file_exists( $albums_cachefile ) && time() - $albums_cachetime < filemtime( $albums_cachefile ) ) :
-            // Do nothing, it's cached
-        else :
-            // If time ran out, copy over
-            copy( $albums_url, $albums_cachefile );
-        endif;
+        // If file is older than cache time, overwrite file
+        if ( time() - filemtime( $albums_cachefile ) > 2 * $albums_cachetime ) {
+          copy( $albums_url, $albums_cachefile );
+        }
 
         // Set up feed
         $lastfm_rss = simplexml_load_file( $albums_url );

@@ -14,6 +14,7 @@ $untappd_cachetime = 7200; // Two hours
 
 // If cache file does not exist, let's create it
 if ( ! file_exists( $untappd_cachefile ) ) {
+  touch( $untappd_cachefile );
   copy( $untappd_url, $untappd_cachefile );
 }
 
@@ -31,13 +32,10 @@ $feed = json_decode( $json, true );
   // Check that feed item exists
   if ( isset( $feed['response']['user']['checkins'] ) ) :
 
-    // Serve from the cache if it is younger than $untappd_cachetime
-    if ( file_exists( $untappd_cachefile ) && time() - $untappd_cachetime < filemtime( $untappd_cachefile ) ) :
-    // Do nothing, it's cached
-    else :
-    // If time ran out, copy over
+    // If file is older than cache time, overwrite file
+    if ( time() - filemtime( $untappd_cachefile ) > 2 * $untappd_cachetime ) {
       copy( $untappd_url, $untappd_cachefile );
-    endif;
+    }
 
     $count = 0;
     foreach ( $feed['response']['user']['checkins']['items'] as $i ) :

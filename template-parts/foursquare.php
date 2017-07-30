@@ -17,11 +17,17 @@ $foursquare_cachetime = 43200; // 12 hours
 
 // If cache file does not exist, let's create it
 if ( ! file_exists( $foursquare_cachefile ) ) {
-    file_put_contents( $foursquare_cachefile, $source );
+  touch( $foursquare_cachefile );
+  file_put_contents( $foursquare_cachefile, $source );
 }
 
-$source = file_get_contents( $foursquare_cachefile );
-$json = json_decode( $source, true );
+// If file is older than cache time, overwrite file
+if ( time() - filemtime( $foursquare_cachefile ) > 2 * $foursquare_cachetime ) {
+  file_put_contents( $foursquare_cachefile, $source );
+}
+
+$source_cached = file_get_contents( $foursquare_cachefile );
+$json = json_decode( $source_cached, true );
 
 $lat = $json['response']['user']['checkins']['items']['0']['venue']['location']['lat'];
 $lng = $json['response']['user']['checkins']['items']['0']['venue']['location']['lng'];
@@ -33,14 +39,6 @@ $url = 'http://foursquare.com/v/'.$json['response']['user']['checkins']['items']
 
 // Check if feed items exist
 if ( isset( $json['response']['user']['checkins'] ) ) :
-
-// Serve from the cache if it is younger than $foursquare_cachetime
-if ( file_exists( $foursquare_cachefile ) && time() - $foursquare_cachetime < filemtime( $foursquare_cachefile ) ) :
-    // Do nothing, it's cached
-else :
-    // If time ran out, copy over
-    file_put_contents( $foursquare_cachefile, $json );
-endif;
 
 $lat = $json['response']['user']['checkins']['items']['0']['venue']['location']['lat'];
 $lng = $json['response']['user']['checkins']['items']['0']['venue']['location']['lng'];

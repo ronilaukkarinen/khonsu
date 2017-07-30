@@ -20,16 +20,14 @@ $trakt_cachetime = 10800; // Three hours
 
 				// If cache file does not exist, let's create it
         if ( ! file_exists( $trakt_cachefile ) ) {
+          touch( $trakt_cachefile );
           copy( $trakt_url, $trakt_cachefile );
         }
 
-			  // Serve from the cache if it is younger than $trakt_cachetime
-        if ( file_exists( $trakt_cachefile ) && time() - $trakt_cachetime < filemtime( $trakt_cachefile ) ) :
-         // Do nothing, it's cached
-        else :
-         // If time ran out, copy over
-         copy( $trakt_url, $trakt_cachefile );
-        endif;
+        // If file is older than cache time, overwrite file
+        if ( time() - filemtime( $trakt_cachefile ) > 2 * $trakt_cachetime ) {
+          copy( $trakt_url, $trakt_cachefile );
+        }
 
         $rss = simplexml_load_file( $trakt_cachefile );
         $list = $rss->xpath( '//@url' );
