@@ -2,7 +2,7 @@
 
 A repository for 22th design, 5th WordPress theme for [Rollemaa.fi](https://www.rollemaa.fi), code name *Khonsu*.
 
-Obviously, this theme is not for the public to use, but backup purposes. Releasing in sake of open source, versioning and for you to see how I did this thing.
+Obviously, this theme is **not for the public to use**, since this is **my** website. Would feel awkward to see this in somewhere else. The theme is in here solely for backup purposes, and releasing in sake of open source, versioning and for you to see how I did this thing.
 
 #### Etymology
 
@@ -16,9 +16,7 @@ Khonsu (also Chonsu, Khensu, Khons, Chons or Khonshu) is the Ancient Egyptian go
 
 Rollemaa.fi is my first website ever, started originally in 1999. Since then I have resigned the site 22 times. From those designs five are WordPress theme and Khonsu is the fifth, started on *Wednesday, 26th of July*, during summer holiday, released on *Friday night, 28th of July*.
 
-The website is in Finnish, since it's my personal blog and playground, and I'm Finnish. But the documentation should almost all cases be in English, in my opinion, if no specific reason to do otherwise.
-
-I am a huge fan of Medium.com and it can be seen in the layout.
+The website is in Finnish, since it's my personal blog and playground, and I'm Finnish. But the documentation should almost all cases be in English, in my opinion, if no specific reason to do otherwise. I am a huge fan of Medium.com and it can be seen in the layout.
 
 ### Features
 
