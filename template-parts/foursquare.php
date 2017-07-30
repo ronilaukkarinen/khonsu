@@ -53,7 +53,7 @@ $url = 'http://foursquare.com/v/' . $json['response']['user']['checkins']['items
 $mapurl = 'https://maps.google.com/maps/api/staticmap?sensor=true&center=' . $lat . ',' . $lng . '&maptype=roadmap&size=600x400&style=saturation:-50&style=feature:landscape|visibility:simplified&style=feature:road.highway|visibility:simplified&sensor=false&zoom=13&markers=color:green|' . $lat . ',' . $lng . '|';
 
 // Local map image
-$local_mapfilename = clean( $lat ) . ',' . clean( $lng ) . '.png';
+$local_mapfilename = clean( $lat ) . '' . clean( $lng ) . '.png';
 $local_mapimage = get_theme_file_path( '/inc/cache/foursquare/' . $local_mapfilename );
 $local_mapurl = get_template_directory_uri() . '/inc/cache/foursquare/' . $local_mapfilename;
 if ( ! file_exists( $local_mapimage ) ) :
