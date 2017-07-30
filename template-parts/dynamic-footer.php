@@ -5,11 +5,10 @@
  * @package khonsu
  */
 
-include '../inc/simplecache.php';
-$cache = new SimpleCachePhp(__FILE__);
-
 if ( ! function_exists( 'is_front_page' ) ) :
   include( $_SERVER['DOCUMENT_ROOT'] . '/wp/wp-load.php' );
+  include $_SERVER['DOCUMENT_ROOT'] . '/content/themes/khonsu/inc/simplecache.php';
+  $cache = new SimpleCachePhp(__FILE__);
 endif;
 ?>
 <footer id="colophon" class="site-footer">
@@ -44,4 +43,6 @@ endif;
 
 </footer><!-- #colophon -->
 <?php
-$cache->CacheEnd();
+if ( ! function_exists( 'is_front_page' ) ) :
+  $cache->CacheEnd();
+endif;
