@@ -5,9 +5,6 @@
  * @package khonsu
  */
 
-// Cache the hell out of it
-include get_theme_file_path( '/inc/simplecache.php' );
-$cache = new SimpleCachePhp( __FILE__ );
 ?>
 
 <div class="block block-network">
@@ -100,7 +97,3 @@ $cache = new SimpleCachePhp( __FILE__ );
 
 	</div><!-- .content -->
 </div><!-- .block -->
-
-<?php
-// End cache
-$cache->CacheEnd();
