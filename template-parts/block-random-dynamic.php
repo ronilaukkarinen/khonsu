@@ -7,7 +7,7 @@
  * @package khonsu
  */
 
-include_once( $_SERVER['DOCUMENT_ROOT'] . '/wp/wp-load.php' ); 
+include_once( $_SERVER['DOCUMENT_ROOT'] . '/wp/wp-load.php' );
 
 $args = array(
 	'post_type' => 'post',

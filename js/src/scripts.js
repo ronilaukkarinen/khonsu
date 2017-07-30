@@ -12,6 +12,16 @@
     if (window.innerWidth > 600) {
       $('.equal, .artist-image, .trakt-image').css( { 'height': ($('.col-min').outerHeight() + 'px' ) });
     }
+
+    // Stacked mobile blocks
+    if (window.innerWidth < 770) {
+
+      $('.block-latest .entry, block-random .entry').each(function() {
+        var contentheight =  $(this).find('.entry-details').outerHeight()
+        $(this).find('.entry-featured-image').outerHeight(contentheight);
+      })
+    }
+
   });
 
 
@@ -121,7 +131,16 @@
 
          // Equal height blocks
          if (window.innerWidth > 600) {
-          $('.equal, .artist-image, .trakt-image').css( { 'height': ($('.col-min').outerHeight() + 'px' ) });
+            $('.equal, .artist-image, .trakt-image').css( { 'height': ($('.col-min').outerHeight() + 'px' ) });
+         }
+
+        // Stacked mobile blocks
+        if (window.innerWidth < 770) {
+
+          $('.block-latest .entry, block-random .entry').each(function() {
+            var contentheight =  $(this).find('.entry-details').outerHeight()
+            $(this).find('.entry-featured-image').outerHeight(contentheight);
+          })
         }
 
         // Max height for hero, fix iOS scaling issues

@@ -85,10 +85,41 @@ body {
           &.block-latest {
             margin-bottom: 60px;
             margin-top: 30px;
+
+            @media(max-width: $container-ipad) {
+              .entry {
+                .entry-featured-image,
+                .entry-details {
+                  .entry-details-footer,
+                  p {
+                    position: static;
+                  }
+                }
+              }
+            }            
           }
 
           &.block-random {
             margin-bottom: 60px;
+
+            // Hack for displaying featured images in dynamic loaded content
+            @media(max-width: $container-ipad) {
+              .entry {
+                .entry-featured-image,
+                .entry-details {
+                  min-height: 250px;
+
+                  p {
+                    display: block;
+                  }
+
+                  // Smaller iPhones
+                  @media(max-width: 330px) {
+                    min-height: 120px;
+                  }
+                }
+              }
+            }
           }
 
           &.block-latest-stacked {
@@ -168,23 +199,39 @@ body {
 
             .entry-featured-image {
               @include background-cover();
-              @include span(2/5);
-              height: 250px;
+              @include span(2/5);              
               position: relative;
 
-              @media(max-width: $container-mobile) {
-                height: 170px;
+              @media(min-width: $container-ipad) {
+                height: 250px;
+              }
+
+              @media(max-width: $container-ipad) {
+                height: auto;
+              }
+
+              // Smaller iPhones
+              @media(max-width: 330px) {
+                @include stack();
               }
             }
 
             .entry-details {
               @include span(3/5);
-              height: 250px;
               padding: 20px;
               position: relative;
 
+              @media(min-width: $container-ipad) {
+                height: 250px;
+              }
+
               @media(max-width: $container-mobile) {
-                height: 170px;
+                height: auto;
+              }
+
+              // Smaller iPhones
+              @media(max-width: 330px) {
+                @include stack();
               }
 
               h3 {
@@ -196,6 +243,7 @@ body {
                   font-weight: 600;
                 }
               }
+
 
               // Set up four lines
               $font-size: 14px;
