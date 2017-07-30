@@ -15,7 +15,8 @@
 
 	<div class="content">
 
-		<?php require_once( get_template_directory() . '/inc/simplepie/autoloader.php' );
+		<?php 
+		require_once( get_template_directory() . '/inc/simplepie/autoloader.php' );
 		$feed = new SimplePie();
 		$feed->set_cache_location( get_template_directory() . '/inc/simplepie/library/cache' );
 		$feed->set_cache_duration( 7200 ); // 2 hours
@@ -27,6 +28,9 @@
 			'https://www.rollemaa.org/leffat-rss.php',
 			'https://medium.com/feed/@rolle/',
 		));
+
+		// Time zone fix
+		date_default_timezone_set('Europe/Helsinki');
 
 		$feed->handle_content_type();
 		$feed->set_item_limit( 1 );
