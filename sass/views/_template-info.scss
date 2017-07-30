@@ -4,14 +4,51 @@ body {
       float: right;
       max-width: 250px;
       max-height: 250px;
+      margin-bottom: 10px;
       width: 100%;
-      margin-left: 20px;
-      margin-bottom: 40px;
+      text-align: center;
+
+      @media(max-width: 770px) {
+        max-width: 200px;
+        max-height: 200px;
+      }
+
+      @media(max-width: 600px) {
+        max-width: 180px;
+        max-height: 180px;
+      }
+
+      @media(max-width: $container-mobile) {
+        float: none;
+        max-width: 100%;
+        text-align: left;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: block;
+        overflow: hidden;
+        max-height: 100%;
+      }
 
       img {
-        width: 100%;
-        height: auto;
+        width: 180px;
+        height: 180px;
         border-radius: 50%;
+        margin-bottom: 10px;
+
+        @media(max-width: 770px) {
+          width: 160px;
+          height: 160px;
+        }
+
+        @media(max-width: 600px) {
+          width: 120px;
+          height: 120px;
+        }
+
+        @media(max-width: $container-mobile) {
+          width: 180px;
+          height: 180px;
+        }
       }
     }
 
@@ -21,6 +58,13 @@ body {
         color: #888;
         text-align: center;
         margin: 5px 0;
+
+        @media(max-width: $container-mobile) {
+          text-align: left;
+          font-size: 16px;
+          position: relative;
+          left: 35px;
+        }
       }
     }
 
