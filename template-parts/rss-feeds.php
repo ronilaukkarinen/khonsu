@@ -5,6 +5,9 @@
  * @package khonsu
  */
 
+// Cache the hell out of it
+include get_theme_file_path( '/inc/simplecache.php' );
+$cache = new SimpleCachePhp( __FILE__ );
 ?>
 
 <div class="block block-network">
@@ -15,7 +18,7 @@
 
 	<div class="content">
 
-		<?php 
+		<?php
 		require_once( get_theme_file_path( '/inc/simplepie/autoloader.php' ) );
 		$feed = new SimplePie();
 		$feed->set_cache_location( get_theme_file_path( '/inc/simplepie/library/cache' ) );
@@ -30,7 +33,7 @@
 		));
 
 		// Time zone fix
-		date_default_timezone_set('Europe/Helsinki');
+		date_default_timezone_set( 'Europe/Helsinki' );
 
 		$feed->handle_content_type();
 		$feed->set_item_limit( 1 );
@@ -88,7 +91,7 @@
 					<div class="meta-avatar" style="background-image: url('<?php echo $avatar; ?>');"></div>
 					<div class="meta-title-stuff">
 						<h5><a href="<?php echo $feed->get_link(); ?>"><?php echo $title; ?></a></h5>
-						<h6><time datetime="<?php echo $item->get_date( 'c' ); ?>"><?php echo human_time_diff( $item->get_date( 'U' ), current_time( 'timestamp' ) ) . ' sitten'; ?></time></h6>
+						<h6><time datetime="<?php echo $item->get_date( 'c' ); ?>"><?php echo human_time_diff( $item->get_date( 'U' ) + 10800, current_time( 'timestamp' ) ) . ' sitten'; ?></time></h6>
 					</div>
 				</div>
 			</div>
@@ -97,3 +100,7 @@
 
 	</div><!-- .content -->
 </div><!-- .block -->
+
+<?php
+// End cache
+$cache->CacheEnd();
