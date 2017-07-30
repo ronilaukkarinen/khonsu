@@ -5,6 +5,9 @@
  * @package khonsu
  */
 
+include '../inc/simplecache.php';
+$cache = new SimpleCachePhp(__FILE__);
+
 if ( ! function_exists( 'is_front_page' ) ) :
   include( $_SERVER['DOCUMENT_ROOT'] . '/wp/wp-load.php' );
 endif;
@@ -40,3 +43,5 @@ endif;
   </div>
 
 </footer><!-- #colophon -->
+<?php
+$cache->CacheEnd();
