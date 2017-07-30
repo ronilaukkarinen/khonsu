@@ -40,9 +40,26 @@ $feed = json_decode( $json, true );
     endif;
 
     $count = 0;
-    foreach ( $feed['response']['user']['checkins']['items'] as $i ) : ?>
+    foreach ( $feed['response']['user']['checkins']['items'] as $i ) :
 
-    <div class="feed-item equal beer" style="background-image: url('<?php if ( ! empty( $i['media']['items'] ) ) { foreach ( $i['media']['items'] as $media ) { echo $media['photo']['photo_img_md']; } } else { echo get_template_directory_uri() . '/images/default-beer.jpg'; } ?>');">
+    // Local beer image
+    $local_beer_filename = clean( strtolower( $i['brewery']['brewery_name'] ) ) . '' . clean( strtolower( $i['beer']['beer_name'] ) ) . '.jpeg';
+    $local_beer_image = get_theme_file_path( '/inc/cache/untappd/' . $local_beer_filename );
+    $local_beer_image_url = get_template_directory_uri() . '/inc/cache/untappd/' . $local_beer_filename;
+
+    if ( ! empty( $i['media']['items'] ) ) :
+      foreach ( $i['media']['items'] as $media ) :
+
+        if ( ! file_exists( $local_beer_image ) ) :
+          copy( $media['photo']['photo_img_md'], $local_beer_image );
+        endif;
+
+      endforeach;
+    else :
+     $local_beer_image_url = get_template_directory_uri() . '/images/default-beer.jpg';
+    endif; ?>
+
+    <div class="feed-item equal beer" style="background-image: url('<?php echo $local_beer_image_url; ?>');">
 
       <div class="info-overlay">
         <h3><a href="https://untappd.com/user/rolle"><?php echo $i['brewery']['brewery_name']; ?> <?php echo $i['beer']['beer_name']; ?></a></h3>
