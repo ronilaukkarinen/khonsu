@@ -4,6 +4,8 @@ A repository for 22th design, 5th WordPress theme for [Rollemaa.fi](https://www.
 
 Obviously, this theme is **not for the public to use**, since this is **my** website. Would feel awkward to see this in somewhere else. The theme is in here solely for backup purposes, and releasing in sake of open source, versioning and for you to see how I did this thing.
 
+The theme is completely in Finnish and contains some of my personal oddities.
+
 #### Etymology
 
 Listened a lot of latest album by a progressive black metal band Khonsu, called [The Xun Protectorate](https://www.last.fm/music/Khonsu/The+Xun+Protectorate) during those three days. Also, Khonsu-god is like a "pathfinder". Me finding a path and staying up nights felt proper.
