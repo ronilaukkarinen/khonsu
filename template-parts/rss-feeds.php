@@ -15,85 +15,71 @@
 
 	<div class="content">
 
-		<?php
-		require_once( get_theme_file_path( '/inc/simplepie/autoloader.php' ) );
-		$feed = new SimplePie();
-		$feed->set_cache_location( get_theme_file_path( '/inc/simplepie/library/cache' ) );
-		$feed->set_cache_duration( 7200 ); // 2 hours
-		$feed->set_feed_url( array(
-			'https://twitrss.me/twitter_user_to_rss/?user=rolle',
-			'https://geekylifestyle.com/feed/',
-			'https://www.dude.fi/feed/',
-			'https://www.huurteinen.fi/feed/',
-			'https://www.rollemaa.org/leffat-rss.php',
-			'https://medium.com/feed/@rolle/',
-		));
-
-		// Time zone fix
-		date_default_timezone_set( 'Europe/Helsinki' );
-
-		$feed->handle_content_type();
-		$feed->set_item_limit( 1 );
-		$feed->init();
-
-		foreach ( $feed->get_items() as $item ) :
-			$feed = $item->get_feed();
-
-			// Custom stuff, avatars and extra titles
-			if ( $feed->get_link() === 'https://twitter.com/rolle' ) :
-				$avatar = get_template_directory_uri() . '/images/avatar-twitter.jpg';
-				$title = '@rolle Twitterissä';
-				$title_extra = '';
-				$title_item = $item->get_title();
-
-			else :
-				$title = $feed->get_title();
-				$title_item = $item->get_title();
-			endif;
-
-			if ( $feed->get_link() === 'http://www.rollemaa.org/leffat' ) :
-				$avatar = get_template_directory_uri() . '/images/avatar-leffat.png';
-				$title_extra = 'Elokuva-arvio: ';
-			endif;
-
-			if ( $feed->get_link() === 'https://www.huurteinen.fi/' ) :
-				$avatar = get_template_directory_uri() . '/images/avatar-huurteinen.png';
-				$title_extra = 'Olutarvio: ';
-			endif;
-
-			if ( $feed->get_link() === 'https://geekylifestyle.com/' ) :
-				$avatar = get_template_directory_uri() . '/images/avatar-geekylifestyle.jpg';
-				$title_extra = '';
-			endif;
-
-			if ( $feed->get_link() === 'https://www.dude.fi/' ) :
-				$avatar = get_template_directory_uri() . '/images/avatar-dude.png';
-				$title_extra = '';
-			endif;
-
-			if ( stripos( strtolower( $feed->get_link() ), 'medium.com' ) !== false ) :
-				$avatar = get_template_directory_uri() . '/images/avatar-medium.png';
-				$title_extra = '';
-			endif;
-			?>
-
-			<div class="column">
-				<h4><a href="<?php echo $item->get_link(); ?>">
-					<?php
-					echo $title_extra;
-					echo $title_item;
-					?></a></h4>
-
-				<div class="meta">		
-					<div class="meta-avatar" style="background-image: url('<?php echo $avatar; ?>');"></div>
-					<div class="meta-title-stuff">
-						<h5><a href="<?php echo $feed->get_link(); ?>"><?php echo $title; ?></a></h5>
-						<h6><time datetime="<?php echo $item->get_date( 'c' ); ?>"><?php echo human_time_diff( $item->get_date( 'U' ) + 10800, current_time( 'timestamp' ) ) . ' sitten'; ?></time></h6>
-					</div>
+		<div class="column column-twitter">
+			<h4><a href="#item-title">Päivitystä ladataan...</a></h4>
+			<div class="meta">
+				<div class="meta-avatar" style="background-image: url('<?php echo get_template_directory_uri() . '/images/avatar-twitter.jpg'; ?>');"></div>
+				<div class="meta-title-stuff">
+					<h5><a href="https://twitter.com/rolle"><?php echo esc_html_e( '@rolle Twitterissä', 'khonsu' ); ?></a></h5>
+					<h6><time datetime="">Aikaa ladataan...</time></h6>
 				</div>
 			</div>
+		</div>
 
-		<?php endforeach; ?>
+		<div class="column column-huurteinen">
+			<h4><a href="#item-title">Päivitystä ladataan...</a></h4>
+			<div class="meta">
+				<div class="meta-avatar" style="background-image: url('<?php echo get_template_directory_uri() . '/images/avatar-huurteinen.png'; ?>');"></div>
+				<div class="meta-title-stuff">
+					<h5><a href="https://www.huurteinen.fi"><?php echo esc_html_e( 'Huurteinen', 'khonsu' ); ?></a></h5>
+					<h6><time datetime="">Aikaa ladataan...</time></h6>
+				</div>
+			</div>
+		</div>
+
+		<div class="column column-leffat">
+			<h4><a href="#item-title">Päivitystä ladataan...</a></h4>
+			<div class="meta">
+				<div class="meta-avatar" style="background-image: url('<?php echo get_template_directory_uri() . '/images/avatar-leffat.png'; ?>');"></div>
+				<div class="meta-title-stuff">
+					<h5><a href="https://www.rollemaa.fi/leffat"><?php echo esc_html_e( 'Rollen leffablogi', 'khonsu' ); ?></a></h5>
+					<h6><time datetime="">Aikaa ladataan...</time></h6>
+				</div>
+			</div>
+		</div>
+
+		<div class="column column-geekylifestyle">
+			<h4><a href="#item-title">Päivitystä ladataan...</a></h4>
+			<div class="meta">
+				<div class="meta-avatar" style="background-image: url('<?php echo get_template_directory_uri() . '/images/avatar-geekylifestyle.jpg'; ?>');"></div>
+				<div class="meta-title-stuff">
+					<h5><a href="https://geekylifestyle.com"><?php echo esc_html_e( 'Rollen leffablogi', 'khonsu' ); ?></a></h5>
+					<h6><time datetime="">Aikaa ladataan...</time></h6>
+				</div>
+			</div>
+		</div>
+
+		<div class="column column-medium">
+			<h4><a href="#item-title">Päivitystä ladataan...</a></h4>
+			<div class="meta">
+				<div class="meta-avatar" style="background-image: url('<?php echo get_template_directory_uri() . '/images/avatar-medium.png'; ?>');"></div>
+				<div class="meta-title-stuff">
+					<h5><a href="https://medium.com/@rolle"><?php echo esc_html_e( 'Stories by Roni Laukkarinen on Medium', 'khonsu' ); ?></a></h5>
+					<h6><time datetime="">Aikaa ladataan...</time></h6>
+				</div>
+			</div>
+		</div>
+
+		<div class="column column-dude">
+			<h4><a href="#item-title">Päivitystä ladataan...</a></h4>
+			<div class="meta">
+				<div class="meta-avatar" style="background-image: url('<?php echo get_template_directory_uri() . '/images/avatar-dude.png'; ?>');"></div>
+				<div class="meta-title-stuff">
+					<h5><a href="https://www.dude.fi/blogi"><?php echo esc_html_e( 'Digitoimisto Dude', 'khonsu' ); ?></a></h5>
+					<h6><time datetime="">Aikaa ladataan...</time></h6>
+				</div>
+			</div>
+		</div>
 
 	</div><!-- .content -->
 </div><!-- .block -->

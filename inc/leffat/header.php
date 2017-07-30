@@ -34,7 +34,7 @@
      $value = stripslashes( $value );
     }
     // Escape things properly
-   return mysql_real_escape_string( $value, $DB );
+   return mysqli_real_escape_string( $value, $DB );
  }
 
 // Quote variable to make safe
@@ -46,7 +46,7 @@
  }
     // Quote if not a number or a numeric string
  if ( ! is_numeric( $value ) ) {
-   $value = "'" . mysql_real_escape_string( $value ) . "'";
+   $value = "'" . mysqli_real_escape_string( $value ) . "'";
  }
 
  return $value;

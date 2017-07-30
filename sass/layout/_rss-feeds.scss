@@ -1,0 +1,102 @@
+body {
+  #page {
+    .site-content {
+      .site-front-page {
+        .block {
+          &.block-network {
+            margin-bottom: 30px;
+
+            .content {
+              overflow: hidden;
+
+              .column {
+                @include column(1/2, $cycle: 2);
+                margin-bottom: 30px;
+
+                @media(max-width: 750px) {
+                  @include stack();
+                }
+
+                &.column-twitter {
+
+                  // Ugly hack for fixing jquery.rss not-working offset bug
+                  .meta:first-of-type,
+                  h4:first-of-type {
+                    display: none !important;
+                  }
+
+                  h4 {
+                    margin-top: 0;
+                  }
+                }
+
+                h4 {
+                  font-size: 15px;
+                  margin-bottom: 10px;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  padding-right: 20px;
+                  letter-spacing: -.02em;
+
+                  a {
+                    color: $color-headings;
+                  }
+                }
+
+                .meta {
+                  display: flex;
+
+                  .meta-avatar {
+                    @include background-cover();
+                    border-radius: 50%;
+                    width: 41px;
+                    height: 41px;
+                    flex: 0 0 auto;
+                    position: relative;
+                    left: 4px;
+
+                    &:after {
+                      width: 47px;
+                      height: 47px;
+                      border: 1px solid rgba(#606c76, .8);
+                      border-radius: 50%;
+                      content: '';
+                      display: block;
+                      top: -3px;
+                      left: -3px;
+                      position: absolute;
+                    }
+                  }
+
+                  .meta-title-stuff {
+                    flex: 0 0 auto;
+                    position: relative;
+                    left: 16px;
+
+                    h5 {
+                      font-size: 13px;
+                      font-weight: 400;
+                      margin: 5px 0;
+
+                      a {
+                        color: $color-headings;
+                      }
+                    }
+
+                    h6 {
+                      font-size: 13px;
+                      font-weight: 400;
+                      color: #777;
+                      margin: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
