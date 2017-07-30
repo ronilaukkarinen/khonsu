@@ -88,9 +88,9 @@
     // Add class to all images under certain width
     $('.single-post .entry-content').find('img').each(function () {
      var $this = $(this), width = $this.width();
-     if (width < 580) {
-      $this.addClass('too-small');
-    }
+     if ( width < 580 && width > 100 ) {
+        $this.addClass('too-small');
+      }
     });
 
     // Max height for hero, fix iOS scaling issues

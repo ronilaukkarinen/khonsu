@@ -20,6 +20,12 @@ body {
 
   .site-content {
 
+    // Ignore links in fancy items
+    a.fancy {
+      box-shadow: none;
+      text-shadow: none;
+    }
+
     // Big photos
     .entry-photo {
       margin-left: -150px;
