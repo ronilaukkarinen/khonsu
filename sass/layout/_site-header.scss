@@ -5,8 +5,6 @@
 // the site navigation and search for example.
 // -----------------------------------------------------------
 
-$header-height: 400px;
-
 .site-header {
   @include background-cover();
   background-image: url('../video/trees.jpg');
@@ -46,11 +44,15 @@ $header-height: 400px;
   .site-branding {
     position: relative;
     z-index: 2;
-    margin-top: 131px;
-    margin-bottom: 131px;
+    text-align: center;
+    height: 400px;
+
+    @media(max-width: 700px) {
+      height: 220px;
+    }
 
     .site-title {
-      @include horizontal-align();
+      @include vertical-align();
       overflow: visible;
       margin: 0;
       text-align: center;
