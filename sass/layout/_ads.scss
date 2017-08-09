@@ -3,7 +3,7 @@ body {
     .site-content {
 
       .adsbygoogle {
-        margin-top: 30px !important;
+        margin-top: 30px;
       }
 
       .advertisement {
@@ -77,6 +77,12 @@ body {
       .ylamainos {
         @media (max-width: 740px) {
           display: none;
+        }
+      }
+
+      .keskimainos {
+        .adsbygoogle {
+          margin: 0 !important;
         }
       }
 
