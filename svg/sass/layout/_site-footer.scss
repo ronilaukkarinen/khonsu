@@ -1,0 +1,274 @@
+// ------------------------------------------------------------
+// Site footer
+//
+// The very bottom of the site. Usually contains supporting
+// or secondary navigation, social media icons, contact details
+// and such.
+// ------------------------------------------------------------
+
+body {
+
+  button.load-dynamic-footer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    margin-bottom: 60px !important;
+    display: inline-block;
+  }
+
+  .loader-stuff {
+    text-align: center;
+    overflow: hidden;
+    height: 166px;
+  }
+
+  .ending {
+    background: #131517;
+    padding: 25px;
+    margin-bottom: 0;
+
+    p {
+      color: rgba(#fff, .2);
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 400;
+
+      a {
+        text-shadow: 1px 1px 0 #131517, -1px 1px 0 #131517, 2px 0 0 #131517, -2px 0 0 #131517;
+        color: rgba(#fff, .3);
+        box-shadow: inset 0 -1px 0 0 rgba(#fff, .1), inset 0 -1px 0 0 rgba(#fff, .1);
+        transition: .55s all;
+
+        &:hover {
+          color: rgba(#fff, .5);
+          box-shadow: inset 0 -1px 0 0 rgba(#fff, .2), inset 0 -4px 0 0 rgba(#fff, .2);
+          text-shadow: none;
+        }
+      }
+    }
+
+    .cols-ending {
+      overflow: hidden;
+
+      .col-ending {
+        &.col-ending-info {
+          @include column(2/3);
+
+          @media(max-width: $container-mobile) {
+            @include stack();
+            margin-bottom: 30px;
+          }          
+        }
+
+        &.col-ending-copyright {
+          @include column(1/3);
+
+          @media(max-width: $container-mobile) {
+            @include stack();
+          }
+        }        
+      }
+    }
+
+    .site-info {
+      overflow: hidden;
+
+      .thanks-wordpress {
+        float: left;
+        margin-top: 4px;
+        margin-right: 17px;
+        background-image: none;
+        box-shadow: none;
+
+        svg {
+          path {
+            transition: .55s all;
+            fill: rgba(#fff, .2);
+          }
+        }
+
+        &:hover {
+          svg {
+
+            path {
+              fill: #fff;
+            }
+          }
+        }
+      }
+
+      span {
+        top: 5px;
+        position: relative;
+      }
+    }
+  }
+
+  #page {
+    .site-footer {
+      background: #31373d;
+
+      .feed-item {
+        @include background-cover();
+        position: relative;
+
+        @media(max-width: $container-ipad) {
+          min-height: 200px;
+
+          .image-full-height {
+            min-height: 200px;
+          }
+        }
+
+        .fit-image {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .image-full-height {
+        @include background-cover();
+        display: block;
+      }
+
+      .info-overlay {
+        color: rgba(#fff, .65);
+        padding: 0 20px;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        z-index: 2;
+
+        h3 {
+          margin-top: 0;
+          margin-bottom: 5px;
+        }
+
+        h4 {
+          font-size: 16px;
+          color: rgba(#fff, .5);
+          margin: 0;
+        }
+
+        a {
+          color: rgba(#fff, .8);
+        }
+      }
+
+      .cols {
+        overflow: hidden;
+
+        .col {
+          @include span(1/3, $cycle: 3);
+          position: relative;
+          overflow: hidden;
+
+          @media(min-width: 1300px) {
+            min-height: 365px;
+          }
+
+          @media(max-width: 760px) {
+            @include stack();
+          }
+
+          &.col-min {
+            @media(min-width: 1300px) {
+              min-height: 365px;
+            }
+          }
+
+          .feed-title {
+            background: #fff;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            padding-right: 10px;
+            margin-top: 0;
+            margin-bottom: 0;
+            overflow: hidden;
+            height: 45px;
+
+            &.foursquare,
+            &.albums,
+            &.untappd {
+              padding-bottom: 12px;
+              padding-top: 13px;
+            }
+
+            svg {
+              position: relative;
+              float: left;
+              top: -1px;
+            }
+
+            &.instagram {
+              svg {
+                top: -2px;
+              }
+            }
+
+            &.lastfm {
+              svg {
+                height: 20px;
+                width: auto;
+                top: -1px;
+              }
+            }
+
+            &.trakt {
+              svg {
+                height: 30px;
+                width: auto;
+              }
+            }
+
+            &.foursquare {
+              svg {
+                height: 20px;
+                width: auto;
+                top: 1px;
+              }
+            }
+
+            &.untappd {
+              svg {
+                height: 18px;
+                width: auto;
+                top: 1px;
+              }
+            }
+
+            a {
+              opacity: .4;
+              transition: .33s opacity;
+              color: #000;
+              display: block;
+              font-size: 15px;
+              font-weight: 500;
+              background-repeat: no-repeat;
+              background-position: 0 2px;
+              position: relative;
+
+              span {
+                position: relative;
+                left: 15px;
+                top: 5px;
+              }
+
+              &:hover {
+                opacity: .7;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#loading {
+  display: none;
+}
+

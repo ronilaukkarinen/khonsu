@@ -1,0 +1,403 @@
+// ------------------------------------------------
+// Front page
+//
+// The most important page on the website goes here.
+// You can force the styles by defining them inside
+// the body.
+// ------------------------------------------------
+
+body {
+  #page {
+    .site-content {
+
+      header.block-header {
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eaeaea;
+        line-height: 1;
+
+        &.block-header-cols {
+          overflow: hidden;
+
+          @media(min-width: 600px) {
+            height: 41px;
+            overflow: visible;
+          }
+        }
+
+        .block-header-col-content {
+          @include column(2/3);
+
+          @media(max-width: 600px) {
+            display: block;
+            height: auto;
+            padding-bottom: 18px;
+          }
+        }
+
+        .block-header-col-sidebar {
+          @include column(1/3);
+        }
+
+        &.block-header-smaller {
+          border-color: #d9d9d9;
+          padding-bottom: 0;
+
+          h2.block-title {
+            font-size: 20px;
+            margin-bottom: 0;
+            padding-bottom: 20px;
+            height: 40px;
+
+            @media(max-width: 600px) {
+              height: auto;
+              overflow: hidden;
+            }
+
+            span {
+              border-bottom: 1px solid #7a7a7a;
+              display: inline-block;
+              height: 41px;
+
+              @media(max-width: $container-ipad) {
+                padding-bottom: 17px;
+              }
+
+              @media(max-width: 600px) {
+                border: 0;
+              }
+            }
+          }
+        }
+
+        p {
+          font-size: 16px;
+          margin: 0;
+          color: #444;
+        }
+      }
+
+      .site-front-page {
+
+        .block {
+          overflow: hidden;
+
+          &.block-latest {
+            margin-bottom: 60px;
+            margin-top: 30px;
+
+            @media(max-width: $container-ipad) {
+              .entry {
+                .entry-featured-image,
+                .entry-details {
+                  .entry-details-footer,
+                  p {
+                    position: static;
+                  }
+                }
+              }
+            }            
+          }
+
+          &.block-random {
+            margin-bottom: 60px;
+
+            // Hack for displaying featured images in dynamic loaded content
+            @media(max-width: $container-ipad) {
+              .entry {
+                .entry-featured-image,
+                .entry-details {
+                  min-height: 250px;
+
+                  p {
+                    display: block;
+                  }
+
+                  // Smaller iPhones
+                  @media(max-width: 330px) {
+                    min-height: 120px;
+                  }
+                }
+              }
+            }
+          }
+
+          &.block-latest-stacked {
+            .content {
+              @include column(2/3);
+            }
+
+            .sidebar {
+              @include column(1/3);
+
+              .hottest {
+                ol {
+                  padding: 0;
+                  margin: 0;
+
+                  li {
+                    counter-increment: numbers;
+                    list-style: none;
+                    position: relative;
+                    padding: 0 0 10px;
+                    margin: 0 0 10px;
+                    border-bottom: 1px solid #f0f0f0;
+
+                    &:last-child {
+                      margin-bottom: 0;
+                      border: 0;
+                      padding: 0;
+                    }
+
+                    h3 {
+                      margin: 0;
+                      padding-left: 35px;
+                      line-height: 1.05;
+                      font-weight: 600;
+
+                      a {
+                        color: #222;
+                        font-size: 15px;
+                      }
+                    }
+
+                    &:before {
+                      font-size: 22px;
+                      content: counter(numbers) ' ';
+                      font-weight: bold;
+                      position: relative;
+                      float: left;
+                      margin-right: 0;
+                      line-height: 1;
+                      z-index: 0;
+                      top: 3px;
+                      transition: all .55s;
+                      color: $color-alt;
+                      font-family: $font-headings;
+
+                      @media(max-width: 540px) {
+                        top: 0;
+                        left: 0;
+                        position: relative;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .entry {
+            @include column(1/2, $cycle: 2, $gutter: 2);
+            margin-bottom: 25px;
+            border: 1px solid #e5e5e5;
+            border-radius: 2px;
+
+            @media(max-width: $container-ipad) {
+              @include stack();
+            }
+
+            .entry-featured-image {
+              @include background-cover();
+              @include span(2/5);              
+              position: relative;
+
+              @media(min-width: $container-ipad) {
+                height: 250px;
+              }
+
+              @media(max-width: $container-ipad) {
+                height: auto;
+              }
+
+              // Smaller iPhones
+              @media(max-width: 330px) {
+                @include stack();
+              }
+            }
+
+            .entry-details {
+              @include span(3/5);
+              padding: 20px;
+              position: relative;
+
+              @media(min-width: $container-ipad) {
+                height: 250px;
+              }
+
+              @media(max-width: $container-mobile) {
+                height: auto;
+              }
+
+              // Smaller iPhones
+              @media(max-width: 330px) {
+                @include stack();
+              }
+
+              h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+
+                a {
+                  color: $color-headings;
+                  font-weight: 600;
+                }
+              }
+
+
+              // Set up four lines
+              $font-size: 14px;
+              $line-height: 1.5;
+              $lines-to-show: 4;
+
+              p {
+                display: block; // Fallback for non-webkit
+                display: -webkit-box;
+                height: $font-size*$line-height*$lines-to-show; // Fallback for non-webkit
+                font-size: $font-size;
+                line-height: $line-height;
+                -webkit-line-clamp: $lines-to-show;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: #888;
+                margin-top: 0;
+
+                @media(max-width: $container-mobile) {
+                  display: none;
+                }
+
+                a {
+                  color: #555;
+                }
+              }
+
+              .entry-details-footer {
+                position: absolute;
+                bottom: 20px;
+                height: 20px;
+
+                @media(max-width: $container-mobile) {
+                  bottom: 15px;
+
+                  .dot-divider,
+                  .time-to-read {
+                    display: none;
+                  }
+
+                  p {
+                    display: block;
+                  }
+                }
+
+                p,
+                .dot-divider {
+                  font-size: 13px;
+                  color: #999;
+                }
+              }
+            }
+          }
+
+          h2.block-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            margin-top: 0;
+            padding: 0;
+            line-height: 1;
+
+            &.more {
+              float: right;
+              position: relative;
+              right: -5px;
+              font-size: 13px;
+              text-transform: uppercase;
+              color: #777;
+              font-weight: 500;
+              letter-spacing: 0;
+              display: inline-block;
+              line-height: auto;        
+              
+              @media(min-width: $container-ipad) {
+                top: -2px;
+              }
+
+              a {
+                font-size: 13px;
+                text-transform: uppercase;
+                color: #777;
+                font-weight: 500;
+                letter-spacing: 0;
+                display: inline-block;
+
+                @media(max-width: $container-mobile) {
+                  line-height: .5;
+                  position: relative;
+                  top: 10px;
+                }
+              }
+
+              svg {
+                fill: #777;
+                position: relative;
+                top: 4px;
+              }
+            }
+          }
+
+          &.block-most-popular-this-week {
+            margin-bottom: 75px;
+
+            .column {
+              @include column(1/3);
+              overflow: hidden;
+
+              @media(max-width: 600px) {
+                @include stack();
+                margin-bottom: 20px;
+              }
+            }
+          }
+
+          .block-inner {
+            .columns {
+              .featured-image {
+                overflow: hidden;
+                display: block;
+                margin-bottom: 20px;
+
+                a {
+                  @include background-cover();
+                  height: 175px;
+                  width: 100%;
+                  display: block;
+                  border: 1px solid rgba(#000, .15);
+                }
+              }
+
+              .column-titles {
+                time {
+                  color: #777;
+                  font-size: 14px;
+                  font-weight: 400;
+                }
+
+                h3 {
+                  font-size: 20px;
+                  font-weight: 600;
+                  margin-top: 0;
+                  margin-bottom: 0;
+
+                  a {
+                    color: $color-headings;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

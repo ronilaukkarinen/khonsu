@@ -1,0 +1,16 @@
+body {
+  #page {
+    .site-footer {
+      .album-list {
+        .album {
+          @include span(1/2, $cycle: 2);
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

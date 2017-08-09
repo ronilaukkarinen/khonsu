@@ -1,0 +1,641 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Khonsu\n"
+"POT-Creation-Date: 2017-07-29 18:01+0300\n"
+"PO-Revision-Date: 2017-07-29 18:04+0300\n"
+"Last-Translator: Roni Laukkarinen <roni@dude.fi>\n"
+"Language-Team: Roni Laukkarinen <roni@dude.fi>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:23
+msgid "Sivua ei löydy"
+msgstr ""
+
+#: 404.php:24
+msgid ""
+"Etsimääsi sivua ei ole olemassa, se on saatettu poistaa tai siirtää. Jos "
+"epäilet kyseessä olevan virhe,"
+msgstr ""
+
+#: 404.php:24
+msgid "ota yhteyttä Rolleen sähköpostitse"
+msgstr ""
+
+#: comments.php:33
+msgid "Reaktiot"
+msgstr ""
+
+#: comments.php:34
+msgid "Lähetä kommentti"
+msgstr ""
+
+#: comments.php:36
+msgctxt "noun"
+msgid "Kommentti"
+msgstr ""
+
+#: comments.php:36
+msgid "Kirjoita kommenttisi tähän."
+msgstr ""
+
+#: comments.php:38
+msgid "Nimesi"
+msgstr ""
+
+#: comments.php:39
+msgid "Sähköpostiosoite (vaaditaan, mutta ei julkaista)"
+msgstr ""
+
+#: comments.php:40
+msgid "Verkkosivusi (jos haluat)"
+msgstr ""
+
+#: comments.php:40
+msgid "http://"
+msgstr ""
+
+#: comments.php:50
+#, php-format
+msgctxt "comments title"
+msgid "%1$s kommentti"
+msgid_plural "%1$s kommenttia"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:59 comments.php:81
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:62 comments.php:84
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:63 comments.php:85
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:98
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:21
+msgid "Näytä höttöinfot"
+msgstr ""
+
+#: functions.php:206
+msgid "&larr; uudempia"
+msgstr ""
+
+#: functions.php:207
+msgid "vanhempia &rarr;"
+msgstr ""
+
+#: header.php:33
+msgid "Skip to content"
+msgstr ""
+
+#: inc/ads-post-type.php:12
+msgctxt "Post Type General Name"
+msgid "Mainokset"
+msgstr ""
+
+#: inc/ads-post-type.php:13
+msgctxt "Post Type Singular Name"
+msgid "Mainos"
+msgstr ""
+
+#: inc/ads-post-type.php:14 inc/ads-post-type.php:15
+msgid "Mainokset"
+msgstr ""
+
+#: inc/ads-post-type.php:16
+msgid "Mainos-arkistot"
+msgstr ""
+
+#: inc/ads-post-type.php:17
+msgid "Mainoksen attribuutit"
+msgstr ""
+
+#: inc/ads-post-type.php:18
+msgid "Isäntämainos:"
+msgstr ""
+
+#: inc/ads-post-type.php:19
+msgid "Kaikki mainokset"
+msgstr ""
+
+#: inc/ads-post-type.php:20 inc/ads-post-type.php:21
+msgid "Lisää mainos"
+msgstr ""
+
+#: inc/ads-post-type.php:22
+msgid "Uusi mainos"
+msgstr ""
+
+#: inc/ads-post-type.php:23
+msgid "Muokkaa mainosta"
+msgstr ""
+
+#: inc/ads-post-type.php:24
+msgid "Päivitä mainos"
+msgstr ""
+
+#: inc/ads-post-type.php:25
+msgid "Katso mainos"
+msgstr ""
+
+#: inc/ads-post-type.php:26
+msgid "Katso mainoksia"
+msgstr ""
+
+#: inc/ads-post-type.php:27
+msgid "Etsi mainos"
+msgstr ""
+
+#: inc/ads-post-type.php:28
+msgid "Ei löydy"
+msgstr ""
+
+#: inc/ads-post-type.php:29
+msgid "Ei löydy roskista"
+msgstr ""
+
+#: inc/ads-post-type.php:30
+msgid "Artikkelikuva"
+msgstr ""
+
+#: inc/ads-post-type.php:31
+msgid "Aseta artikkelikuva"
+msgstr ""
+
+#: inc/ads-post-type.php:32
+msgid "Poista artikkelikuva"
+msgstr ""
+
+#: inc/ads-post-type.php:33
+msgid "Käytä artikkelikuvana"
+msgstr ""
+
+#: inc/ads-post-type.php:34
+msgid "Lisää kohteeseen"
+msgstr ""
+
+#: inc/ads-post-type.php:35
+msgid "Lisätty kohteeseen"
+msgstr ""
+
+#: inc/ads-post-type.php:36
+msgid "Mainoslista"
+msgstr ""
+
+#: inc/ads-post-type.php:37
+msgid "Mainoslistan navigointi"
+msgstr ""
+
+#: inc/ads-post-type.php:38
+msgid "Suodata listaa"
+msgstr ""
+
+#: inc/ads-post-type.php:41
+msgid "Mainos"
+msgstr ""
+
+#: inc/ads-post-type.php:42
+msgid "Ad slots"
+msgstr ""
+
+#: inc/functions.php:14 inc/functions.php:19
+msgctxt "Used between list items, there is a space after the comma"
+msgid ", "
+msgstr ""
+
+#: inc/functions.php:16
+msgctxt "Used between list items, there is a space after the comma."
+msgid ", "
+msgstr ""
+
+#: inc/functions.php:28
+#, php-format
+msgid "Leave a comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+"Jätä kommentti<span class=\"screen-reader-text\"> artikkeliin %s</span>"
+
+#: inc/functions.php:33
+#, php-format
+msgctxt "%s: Name of current post"
+msgid "Edit %s"
+msgstr "Muokkaa %s"
+
+#: inc/functions.php:52
+msgid "Your comment is awaiting approval."
+msgstr "Kommenttisi odottaa hyväksymistä."
+
+#: inc/functions.php:58
+msgid "&mdash; Edit"
+msgstr "&mdash; Muokkaa"
+
+#: inc/menus.php:9
+msgid "Primary Menu"
+msgstr "Päävalikko"
+
+#: page.php:33 single.php:44
+msgid "Pages:"
+msgstr "Sivut:"
+
+#: page.php:44 single.php:54 template-arkisto.php:108 template-haku.php:41
+#: template-info.php:83
+#, php-format
+msgid "Muokkaa %s"
+msgstr ""
+
+#: single.php:39
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Jatka artikkelin %s lukemista <span class=\"meta-nav\">&rarr;</span>"
+
+#: single.php:70
+msgid "Kirjoittaja on "
+msgstr ""
+
+#: single.php:72
+msgid "Lue Rollesta lisää"
+msgstr ""
+
+#: template-arkisto.php:19
+msgid "Arkisto"
+msgstr ""
+
+#: template-arkisto.php:24
+msgid "Historian lehtien havinaa"
+msgstr ""
+
+#: template-arkisto.php:25
+msgid ""
+"Aika kuluu. Olin joskus nuorempi. Täällä ne kuitenkin ovat, kaikki "
+"merkinnät, jotka olen saanut pelastettua, vuodesta 2005 eteenpäin. "
+"Vanhempiakin oli jossain vaiheessa näkyvillä, mutta niitä on tuhoutunut ja "
+"suurimman osan vedin pois netistä niiden sisällöttömyyden ja naiiviuden "
+"vuoksi."
+msgstr ""
+
+#: template-arkisto.php:29
+msgid "Avainsanapilvi"
+msgstr ""
+
+#: template-arkisto.php:59
+msgid "30 kaikkien aikojen luetuinta kirjoitusta"
+msgstr ""
+
+#: template-arkisto.php:78
+msgid "30 kaikkien aikojen kommentoiduinta kirjoitusta"
+msgstr ""
+
+#: template-arkisto.php:97
+msgid "Täydellinen blogiarkisto"
+msgstr ""
+
+#: template-arkisto.php:99
+msgid ""
+"Janoat lisää? Oletko varma? Ellen jo jossain maininnut, Rollemaa sisältää "
+"yhteensä "
+msgstr ""
+
+#: template-haku.php:26
+msgid "No ei mikään ihme, sillä täällä on "
+msgstr ""
+
+#: template-info.php:19
+msgid "Tietoa minusta ja sivustosta"
+msgstr ""
+
+#: template-info.php:24
+msgid "Kuka Rolle?"
+msgstr ""
+
+#: template-info.php:38
+msgid ""
+"Hei vaan! Selaat henkilökohtaista blogiani, joka on yksi sadoista sivuista, "
+"joita olen toteuttanut. Omia sivustoja minulla on kymmenkunta. Minä olen "
+"Roni \"Rolle\" Laukkarinen, jyväskyläläinen digialan yrittäjä/<a href="
+"\"http://www.dude.fi\" target=\"_blank\">dude</a>, hevimies ja pitkän linjan "
+"elämäntapanörtti. Olen harrastellut fanaattisesti tietokoneita jo "
+"pikkupojasta ja ensimmäisiä nettisivujani julkaisin 90-luvun loppupuolella, "
+"jolloin olin noin kymmenvuotias. Keväästä 2013 lähtien olen ollut yrittäjä "
+"omassa yrityksessäni, <a href=\"http://www.dude.fi\" target=\"_blank"
+"\">Digitoimisto Dude Oy</a>:ssa, jossa teen sitä mistä eniten tykkään ja "
+"mitä parhaiten osaan - nettisivuja- ja muita netissä toimivia palveluita."
+msgstr ""
+
+#: template-info.php:40
+msgid ""
+"Toinen puoli elämästäni sisältää raskasta metallimusiikkia ja onpa jokunen "
+"kirjoitus tullut kirjoitettua myös ammatillisella puolella, <a href=\"http://"
+"www.metallimusiikki.net\" target=\"_blank\">Metallimusiikki.netin "
+"verkkolehdessä</a>, jonka toimituksessa olen ollut vuodesta 2007. Muita "
+"harrastuksiani ovat <a href=\""
+msgstr ""
+
+#: template-info.php:42
+msgid "Arkeni kuluu <a href=\""
+msgstr ""
+
+#: template-info.php:46
+msgid "Bloggaaminen"
+msgstr ""
+
+#: template-info.php:48
+msgid ""
+"Blogia olen kirjoittanut jotakuinkin vuodesta 2000 ja sitä ennen olen koko "
+"pienen elämäni kirjoittanut päiväkirjoja ja muitakin tekstejä. Nuorempana "
+"tuli kirjoitettua jopa novelleja ja runoja, joista joitakin julkaistiin "
+"lehdissäkin. Blogissa tekstini tuppaavat aina paisumaan, koska tykkään "
+"kirjoittaa."
+msgstr ""
+
+#: template-info.php:50
+msgid ""
+"Rollemaa on ollut olemassa melkein yhtä pitkään kuin minäkin. Ennen "
+"Rollemaata sivusto kulki nimellä Rolleweb.net (kyllä, 10-vuotiaan nulikan "
+"hyvin omaperäinen päähänpisto - netti oli täynnä Markonettiä, Jonnewebiä, "
+"Anttinetiä, Jarmonetiä ja ties mitä Masanetiä siihen aikaan). Domainin "
+"kuitenkin myi törkeästi eteenpäin silloinen palveluntarjoajani, konkurssiin "
+"mennyt Futuron Internet. Sain kuitenkin suurimman osan vanhoistakin "
+"kirjoituksista palautettua varmuuskopioista, joten tarinan voit lukea "
+"täältäkin, avainsanan <a href=\""
+msgstr ""
+
+#: template-info.php:52
+msgid ""
+"Kaiken tarpeellisen tiedon – ja ehkä vähän enemmänkin – saat kyllä tietää "
+"lukemalla blogiani. Siitä vaan penkomaan läpi "
+msgstr ""
+
+#: template-info.php:54
+msgid "Muut blogini"
+msgstr ""
+
+#: template-info.php:56
+msgid ""
+"Rollemaa ei ole ainoa paikka, jonne bloggaan. Kirjoittelen epäsäännöllisen "
+"säännöllisesti myös ainakin seuraaviin blogeihin:"
+msgstr ""
+
+#: template-info.php:59
+msgid "Pikkuisen oma blogi"
+msgstr ""
+
+#: template-info.php:59
+msgid "Lasteni blogi"
+msgstr ""
+
+#: template-info.php:60
+msgid "Rollen leffat"
+msgstr ""
+
+#: template-info.php:60
+msgid "Kevyitä elokuva-arvosteluja"
+msgstr ""
+
+#: template-info.php:61
+msgid "Rollen unipäiväkirja"
+msgstr ""
+
+#: template-info.php:61
+msgid "Nähtyjä unia"
+msgstr ""
+
+#: template-info.php:62
+msgid "AdminLabs (ennen problemsolv.in)"
+msgstr ""
+
+#: template-info.php:62
+msgid "Englanninkielinen tietotekniikka-ongelmanratkaisublogi"
+msgstr ""
+
+#: template-info.php:63
+msgid "Digitoimisto Dude Oy"
+msgstr ""
+
+#: template-info.php:63
+msgid "Yritykseni blogi"
+msgstr ""
+
+#: template-info.php:64
+msgid "Huurteinen.fi"
+msgstr ""
+
+#: template-info.php:64
+msgid "Huhtikuussa 2014 perustettu olutblogi"
+msgstr ""
+
+#: template-info.php:65
+msgid "Pulina.fi"
+msgstr ""
+
+#: template-info.php:65
+msgid "Perustamani aktiivisen suomalaisen IRC-kanavan sivut"
+msgstr ""
+
+#: template-info.php:66
+msgid "Rolle @medium"
+msgstr ""
+
+#: template-info.php:66
+msgid "Huhtikuussa 2015 aloitettu englanninkielinen blogini (Medium)"
+msgstr ""
+
+#: template-info.php:67
+msgid "Geeky Lifestyle"
+msgstr ""
+
+#: template-info.php:67
+msgid "Kansainvälinen nörttiblogini."
+msgstr ""
+
+#: template-info.php:70
+msgid "Yhteystiedot"
+msgstr ""
+
+#: template-info.php:72
+msgid ""
+"Minut tavoittaa parhaiten netistä. Olen rekisteröitynyt yli 60 sosiaalisen "
+"median palveluun, joista eniten käytän <a href=\"http://twitter.com/rolle"
+"\">Twitteriä</a>. Paljon vaivaa ei tarvitse nähdä jos minuun haluaa saada "
+"yhteyttä, sillä yhteystietoni löytyvät netistä jo varmasti osoitetta ja "
+"puhelinnumeroa myöten parin klikkauksen kautta. Ota rohkeasti yhteyttä, jos "
+"on asiaa! Tweettaa tai pistä sähköpostia <a href=\"mailto:rolle@rollemaa.fi"
+"\">rolle@rollemaa.fi</a> tai työasioissa <a href=\"mailto:roni@dude.fi"
+"\">roni@dude.fi</a>."
+msgstr ""
+
+#: template-info.php:74
+msgid ""
+"Rollemaa löytyy muuten <a href=\"http://www.facebook.com/rollemaa"
+"\">Facebookistakin</a>, mutta sinne tulee lähinnä Instagram-kuvia ja uusia "
+"bloggauksia. Jos tahdot pysyä kärryillä sitäkin kautta, <a href=\"http://www."
+"facebook.com/rollemaa\">tykkää ihmeessä</a>."
+msgstr ""
+
+#: template-parts/albums.php:12
+msgid "Viikon levyt"
+msgstr ""
+
+#: template-parts/block-latest-stacked.php:39
+msgid "Kymmenen suosituinta"
+msgstr ""
+
+#: template-parts/block-latest-stacked.php:71 template-parts/content.php:37
+msgid "Teksti jatkuu vielä."
+msgstr ""
+
+#: template-parts/block-latest-stacked.php:71
+#: template-parts/block-latest-stacked.php:90 template-parts/content.php:37
+#: template-parts/content.php:56
+msgid "Lue loppuun."
+msgstr ""
+
+#: template-parts/block-latest-stacked.php:86
+msgid "kommentoi viimeksi"
+msgstr ""
+
+#: template-parts/block-latest-stacked.php:86
+msgid "muun lisäksi"
+msgstr ""
+
+#: template-parts/block-latest-stacked.php:86 template-parts/content.php:52
+msgid "Katso mistä puhutaan."
+msgstr ""
+
+#: template-parts/block-latest-stacked.php:90 template-parts/content.php:56
+msgid "Tekstiä on linkitetty, mutta ei vielä kommentoitu."
+msgstr ""
+
+#: template-parts/block-three-most-popular.php:17
+msgid "Tämän viikon luetuimmat"
+msgstr ""
+
+#: template-parts/block-three-most-popular.php:37
+msgid "Esikatselukuva artikkelille"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Mitään ei löytynyt"
+
+#: template-parts/content-none.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Valmiina julkaisemaan ensimmäisen kirjoituksen? <a href=\"%1$s\">Aloita "
+"tästä</a>."
+
+#: template-parts/content-none.php:21
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Valitettavasti mitään ei löytynyt hakuehdoilla. Ole hyvä ja yritä uudelleen."
+
+#: template-parts/content-none.php:24
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "Valitettavasti mitään ei löytynyt. Kokeile hakua."
+
+#: template-parts/content.php:52
+msgid "kommentoi viimeksi "
+msgstr ""
+
+#: template-parts/content.php:52
+msgid " muun lisäksi"
+msgstr ""
+
+#: template-parts/foursquare.php:31
+msgid "Viimeksi käyty"
+msgstr ""
+
+#: template-parts/hero-single.php:18
+msgid "Kirjoittanut"
+msgstr ""
+
+#: template-parts/hero-single.php:18
+msgid "Liittyy aiheisiin"
+msgstr ""
+
+#: template-parts/hero-single.php:24 template-parts/hero-single.php:27
+msgid "Hyppää sisältöön"
+msgstr ""
+
+#: template-parts/hero-single.php:25
+msgid "Hyppää sisältöön klikkaamalla tästä tai rullaa alaspäin"
+msgstr ""
+
+#: template-parts/hero-single.php:28
+msgid ""
+"Hyppää sisältöön pyyhkimällä näyttöä sormella ylöspäin tai klikkaamalla tästä"
+msgstr ""
+
+#: template-parts/instagram.php:13
+msgid "Viimeisimmät räpsyt"
+msgstr ""
+
+#: template-parts/lastfm.php:16
+msgid "Viimeksi kuunneltu"
+msgstr ""
+
+#: template-parts/lastfm.php:49
+msgid "Last.fm API-virhe"
+msgstr ""
+
+#: template-parts/lastfm.php:50
+msgid "Yritä myöhemmin uudelleen."
+msgstr ""
+
+#: template-parts/rss-feeds.php:13
+msgid "Uutta Rollen muissa verkkoteknologioissa"
+msgstr ""
+
+#: template-parts/trakt.php:12
+msgid "Viimeksi katsottu"
+msgstr ""
+
+#: template-parts/untappd.php:40
+msgid "Viimeksi tuopissa"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Khonsu"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/digitoimistodude/air"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Järjestyksessään 22. ulkoasu vuodesta 1999, 5. WordPressin päälle, vuodesta "
+"2006. Koodinimi: Khonsu."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Roni Laukkarinen"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://ronilaukkarinen.fi"
+msgstr ""

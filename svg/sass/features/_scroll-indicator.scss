@@ -1,0 +1,92 @@
+.scroll-indicator {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 3;
+  opacity: .5;
+  transition: all .55s;
+  overflow: hidden;
+  width: 40px;
+  display: block;
+  height: 120px;
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &.fadeout {
+    animation: fadeOutUpShort 1000ms;
+    opacity: 0;
+  }
+
+  .animated-mouse {
+    display: block;
+  }
+
+  .swiping-hand {
+    width: 35px;
+    height: 55px;
+    display: none;
+    animation: fadeOutUp 3s infinite;
+
+    svg {
+      width: 52px;
+      height: 65px;
+      position: relative;
+      fill: #fff;
+      left: -10px;
+      bottom: -60px;
+    }
+  }
+
+  @media(max-width: 760px) {
+    .animated-mouse {
+      display: none;
+    }
+
+    .swiping-hand {
+      display: block;
+    }
+  }
+}
+
+.animated-mouse {
+  @include horizontal-align();
+  width: 27px;
+  height: 47px;
+  border: 2px solid #fff;
+  border-radius: 14px;
+  background: transparent;
+  position: absolute;
+  bottom: 5px;
+
+  a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media(max-width: $container-mobile) {
+    display: none;
+  }
+
+  .animated-mouse-pointer {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background: #fff;
+    left: 49%;
+    top: 70%;
+    transform: translate(-50%, 0);
+    animation-name: mousePointer;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-fill-mode: backwards;
+    animation-delay: .5s;
+  }
+}
