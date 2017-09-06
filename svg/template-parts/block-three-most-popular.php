@@ -6,7 +6,7 @@
  */
 
 if ( function_exists( 'get_most_popular_posts' ) ) :
-	$query = get_most_popular_posts( 'week', array(), array(
+	$query = get_most_popular_posts( 'week', array(
 		'posts_per_page' => 3,
 	) );
 

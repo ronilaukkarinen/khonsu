@@ -105,7 +105,7 @@ if ( $loop->have_posts() ) : ?>
 
 	<?php
 	if ( function_exists( 'get_most_popular_posts' ) ) :
-		$query = get_most_popular_posts( 'alltime', array(), array(
+		$query = get_most_popular_posts( 'alltime', array(
 			'posts_per_page' => 10,
 		) );
 
