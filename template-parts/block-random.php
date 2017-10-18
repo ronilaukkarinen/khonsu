@@ -29,11 +29,11 @@ if ( $loop->have_posts() ) : ?>
 
 	<header class="block-header block-header-smaller block-header-cols">
 		<div class="block-header-col-content">
-			<h2 class="block-title"><span>Satunnaisia juttuja vuosien varrelta</span></h2>
+			<h2 class="block-title"><span><?php _e( 'Satunnaisia juttuja vuosien varrelta', 'khonsu' ); ?></span></h2>
 		</div>
 
 		<div class="block-header-col-sidebar">
-			<h2 class="block-title more"><a href="#" class="load-more-random" aria-label="Arvo lisää satunnaisia artikkeleita">Arvo uudet <svg class="svgIcon-use" width="19" height="19" viewBox="0 0 19 19"><path d="M7.6 5.138L12.03 9.5 7.6 13.862l-.554-.554L10.854 9.5 7.046 5.692" fill-rule="evenodd"></path></svg></a></h2>
+			<h2 class="block-title more"><a href="#" class="load-more-random" aria-label="<?php _e( 'Arvo lisää satunnaisia artikkeleita', 'khonsu' ); ?>"><?php _e( 'Arvo uudet', 'khonsu' ); ?> <svg class="svgIcon-use" width="19" height="19" viewBox="0 0 19 19"><path d="M7.6 5.138L12.03 9.5 7.6 13.862l-.554-.554L10.854 9.5 7.046 5.692" fill-rule="evenodd"></path></svg></a></h2>
 		</div>
 	</header>
 
@@ -50,7 +50,7 @@ if ( $loop->have_posts() ) : ?>
 		?>
 
 		<div class="entry">
-			<div class="entry-featured-image" style="background-image:url('<?php echo $post_thumbnail; ?>');"><a href="<?php echo get_the_permalink(); ?>" class="absolute-link"><span class="screen-reader-text">Link to article "<?php echo get_the_title(); ?>"</span></a></div>
+			<div class="entry-featured-image" style="background-image:url('<?php echo $post_thumbnail; ?>');"><a href="<?php echo get_the_permalink(); ?>" class="absolute-link"><span class="screen-reader-text"><?php _e( 'Linkki artikkeliin', 'khonsu' ); ?> "<?php echo get_the_title(); ?>"</span></a></div>
 
 			<div class="entry-details">
 				<h3><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>

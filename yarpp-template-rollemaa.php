@@ -17,7 +17,7 @@ if ( $related_query->have_posts() ) : ?>
     endif; ?>
 
     <li class="entry">
-      <div class="entry-featured-image" style="background-image:url('<?php if ( has_post_thumbnail() ) : echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0]; else : echo khonsu_get_random_image_url(); endif; ?>');"><a href="<?php echo get_the_permalink(); ?>" class="absolute-link"><span class="screen-reader-text">Link to article "<?php echo get_the_title(); ?>"</span></a></div>
+      <div class="entry-featured-image" style="background-image:url('<?php if ( has_post_thumbnail() ) : echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0]; else : echo khonsu_get_random_image_url(); endif; ?>');"><a href="<?php echo get_the_permalink(); ?>" class="absolute-link"><span class="screen-reader-text"><?php _e( 'Linkki artikkeliin', 'khonsu' ); ?> "<?php echo get_the_title(); ?>"</span></a></div>
 
       <div class="entry-details">
         <h3><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>

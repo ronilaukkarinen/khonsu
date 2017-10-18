@@ -81,6 +81,8 @@ body {
 
         .block {
           overflow: hidden;
+          clear: both;
+          display: block;
 
           &.block-latest {
             margin-bottom: 60px;

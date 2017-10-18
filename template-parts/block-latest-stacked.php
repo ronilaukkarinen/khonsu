@@ -46,7 +46,7 @@ if ( $loop->have_posts() ) : ?>
 		?>
 
 		<div class="entry-stack">
-			<!-- <div class="entry-featured-image" style="background-image:url('<?php if ( has_post_thumbnail() ) : echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0]; else : echo khonsu_get_random_image_url(); endif; ?>');"><a href="<?php echo get_the_permalink(); ?>" class="absolute-link"><span class="screen-reader-text">Link to article "<?php echo get_the_title(); ?>"</span></a></div> -->
+			<!-- <div class="entry-featured-image" style="background-image:url('<?php if ( has_post_thumbnail() ) : echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0]; else : echo khonsu_get_random_image_url(); endif; ?>');"><a href="<?php echo get_the_permalink(); ?>" class="absolute-link"><span class="screen-reader-text"><?php _e( 'Linkki artikkeliin', 'khonsu' ); ?> "<?php echo get_the_title(); ?>"</span></a></div> -->
 
 			<div class="entry-stack-header">
 				<p><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( ' j. ' ); ?> <?php the_time( ' F ' ); ?>ta</time> <span class="dot-divider"></span> <?php echo khonsu_estimated_reading_time(); ?></p>

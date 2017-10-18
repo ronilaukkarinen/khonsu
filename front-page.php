@@ -32,6 +32,7 @@ get_header();
         endif;
       else :
         get_template_part( 'template-parts/block-four' );
+        get_template_part( 'template-parts/upsell-posts' );
         get_template_part( 'template-parts/ads' );
         get_template_part( 'template-parts/block-three-most-popular' );
       ?>

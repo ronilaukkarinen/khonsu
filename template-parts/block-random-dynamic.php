@@ -40,7 +40,7 @@ endif;
 ?>
 
 <div class="entry">
-	<div class="entry-featured-image" style="background-image:url('<?php echo $post_thumbnail; ?>');"><a href="<?php echo get_the_permalink(); ?>" class="absolute-link"><span class="screen-reader-text">Link to article "<?php echo get_the_title(); ?>"</span></a></div>
+	<div class="entry-featured-image" style="background-image:url('<?php echo $post_thumbnail; ?>');"><a href="<?php echo get_the_permalink(); ?>" class="absolute-link"><span class="screen-reader-text"><?php _e( 'Linkki artikkeliin', 'khonsu' ); ?> "<?php echo get_the_title(); ?>"</span></a></div>
 
 	<div class="entry-details">
 		<h3><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
