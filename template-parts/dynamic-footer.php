@@ -11,7 +11,6 @@ endif;
 ?>
 <footer id="colophon" class="site-footer">
 
-  <?php if ( getenv( 'WP_ENV' ) !== 'development' ) : ?>
   <div class="footer-feeds">
     <div class="cols">
 
@@ -26,7 +25,6 @@ endif;
 
     </div><!-- .cols -->
   </div><!-- .footer-feeds-->
-  <?php endif; ?>
 
   <div class="ending">
     <div class="cols-ending">

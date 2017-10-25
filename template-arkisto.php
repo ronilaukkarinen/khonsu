@@ -24,7 +24,7 @@ get_header(); ?>
 						<h2><?php _e( 'Historian lehtien havinaa', 'khonsu' ); ?></h2>
 						<p><?php _e( 'Aika kuluu. Olin joskus nuorempi. Täällä ne kuitenkin ovat, kaikki merkinnät, jotka olen saanut pelastettua, vuodesta 2005 eteenpäin. Vanhempiakin oli jossain vaiheessa näkyvillä, mutta niitä on tuhoutunut ja suurimman osan vedin pois netistä niiden sisällöttömyyden ja naiiviuden vuoksi.', 'khonsu' ); ?></p>
 
-						<?php include ( TEMPLATEPATH . '/template-parts/ads-google-middle.php' ); ?>
+						<?php include( TEMPLATEPATH . '/template-parts/ads-google-middle.php' ); ?>
 
 						<h2 class="title-grouped"><?php _e( 'Avainsanapilvi', 'khonsu' ); ?></h2>
 						<h4>Avainsanoja käytetty yhteensä 

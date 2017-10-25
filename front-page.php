@@ -10,6 +10,8 @@
  * @package khonsu
  */
 
+include( TEMPLATEPATH . '/inc/cache-start.php' );
+
 get_header();
 ?>
 
@@ -41,7 +43,8 @@ get_header();
           <?php get_template_part( 'template-parts/block-random' ); ?>
         </div>
 
-        <?php get_template_part( 'template-parts/rss-feeds' );
+        <?php
+        get_template_part( 'template-parts/rss-feeds' );
       endif;
       ?>
 
@@ -49,4 +52,6 @@ get_header();
   </main><!-- #main -->
 </div><!-- #primary -->
 
-<?php get_footer();
+<?php
+get_footer();
+include( TEMPLATEPATH . '/inc/cache-end.php' );
