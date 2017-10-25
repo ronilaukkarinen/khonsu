@@ -1,22 +1,34 @@
 <?php
 /**
- * Last.fm module
+ * Last.fm module for loading data via javascript dynamically
  *
  * @package khonsu
  */
 
 if ( getenv( 'WP_ENV' ) === 'development' || file_exists( dirname( __FILE__ ) . '/.dev' ) ) :
+  include( '/var/www/rollemaa/wp/wp-load.php' );
   $cache = '/var/www/rollemaa/lastfm.recent.cache';
 else :
+  include( '/var/www/rollemaa.fi/public_html/wp/wp-load.php' );
   $cache = '/var/www/rollemaa.fi/public_html/lastfm.recent.cache';
 endif;
 
-$seconds_before_update = 1800;
+$seconds_before_update = 20;
 $number_of_songs = 1;
 $socket_timeout = 3; // Seconds to wait for response from audioscrobbler
 ?>
 
-<div id="dynamic-lastfm" class="col equal col-lastfm">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+( function( $ ) {
+  $(function() {
+    if (window.innerWidth > 600) {
+      $('.equal, .artist-image, .trakt-image').css( { 'height': ($('.col-min').outerHeight() + 'px' ) });
+    }
+  });
+} )( jQuery );
+</script>
+
   <div class="lastfm lastfm-last service">
     <h2 class="feed-title lastfm"><a href="http://www.last.fm/user/rolle-" target="_blank" title="Rollen Last.fm-profiili"><?php echo file_get_contents( esc_url( get_theme_file_path( '/svg/lastfm.svg' ) ) ); ?> <span><?php echo esc_html_e( 'Viimeksi kuunneltu', 'khonsu' ); ?></span></a></h2>
 
@@ -66,12 +78,11 @@ $socket_timeout = 3; // Seconds to wait for response from audioscrobbler
      $track_array = explode( ',', $track[ $i ] );
      $entry = explode( ' - ', $track_array[1] );
 
-     $artistxml = simplexml_load_file( 'https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=' . urlencode( $entry[0] ) . '&api_key=' . getenv( 'LASTFM_API_KEY' ) . '&limit=1' );
+     $artistxml = simplexml_load_file( 'https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=' . urlencode( $entry[0] ) . '&api_key=' . getenv( 'LASTFM_API_KEY' ) . '&limit=1' );     
 
      foreach ( $artistxml->artist->image as $img ) :
 
       if ( 'mega' == $img['size'] ) :
-
         if ( '' == $img ) :
          ?>
          <a href="<?php echo get_template_directory_uri(); ?>/images/default-band.jpg" class="image-full-height fancy artist-image" title="' . htmlspecialchars( $entry[0] ) . ' - ' . htmlspecialchars( $entry[1] ) . '" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/default-band.jpg');"><img class="screen-reader-text artist-portrait" src="<?php echo get_template_directory_uri(); ?>/default-band.jpg" alt="Kuva artistista <?php echo htmlspecialchars( $entry[0] ); ?>" /></a>
@@ -108,6 +119,4 @@ endif;
 ?>
 
 </div><!-- .now-playing -->
-
 </div><!-- .service -->
-</div><!-- .col -->

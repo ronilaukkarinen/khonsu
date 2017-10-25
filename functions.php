@@ -397,6 +397,7 @@ function khonsu_scripts() {
 	wp_localize_script(
 		'scripts', 'dynamicFooter', array(
 			'url' => get_template_directory_uri() . '/template-parts/dynamic-footer.php',
+			'lastfm' => get_template_directory_uri() . '/template-parts/lastfm-dynamic.php',
 		)
 	);
 

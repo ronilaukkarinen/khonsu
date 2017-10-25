@@ -22,8 +22,14 @@
       })
     }
 
-  });
+    // Dynamically load now playing song to footer content over cache
+    $("#dynamic-lastfm").load(dynamicFooter.lastfm);
 
+    setInterval(function() {
+      $("#dynamic-lastfm").load(dynamicFooter.lastfm);
+    }, 30000);
+
+  });
 
   // Window scroll
   $(window).scroll(function() {
