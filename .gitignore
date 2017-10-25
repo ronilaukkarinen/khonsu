@@ -1,3 +1,6 @@
+template-parts/lastfm-dynamic.php
+.dev
+template_parts/.dev
 fonts/
 video/
 node_modules/
