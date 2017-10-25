@@ -103,7 +103,7 @@ function spotifyplay_func( $atts ) {
 add_shortcode( 'spotify-play', 'spotifyplay_func' );
 
 /**
- * Enable theme support for essential features.
+ * Minimize HTML (inc/cache-*)
  *
  * @param Buffer $buffer Buffer parameter.
  */
