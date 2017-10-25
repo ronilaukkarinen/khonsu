@@ -20,7 +20,7 @@ $instagram_feed = dude_insta_feed()->get_user_images( '30821744' );
       $local_image_filename = clean( $item['link'] ) . '.png';
       $local_image = get_theme_file_path( '/inc/cache/instagram/' . $local_image_filename );
       $local_image_url = get_template_directory_uri() . '/inc/cache/instagram/' . $local_image_filename;
-      if ( ! file_exists( $local_mapimage ) ) :
+      if ( ! file_exists( $local_image ) ) :
         copy( $remote_image_url, $local_image );
       endif;
       ?>

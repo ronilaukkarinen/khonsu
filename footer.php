@@ -13,9 +13,11 @@
 
 </div><!-- #content -->
 
-<?php if ( is_front_page() ) :
-  get_template_part('template-parts/dynamic-footer');
-else : ?>
+<?php
+if ( is_front_page() ) :
+  get_template_part( 'template-parts/dynamic-footer' );
+else :
+?>
 
 <div class="loader-stuff">
   <button type="button" aria-pressed="false" class="load-dynamic-footer"><?php echo esc_html_e( 'Näytä höttöinfot', 'khonsu' ); ?></button>
@@ -30,7 +32,8 @@ else : ?>
 </div>
 <div id="dynamic-footer"></div>
 
-<?php endif;
+<?php
+endif;
 ?>
 
 </div><!-- #page -->
