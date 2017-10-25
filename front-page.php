@@ -18,7 +18,7 @@ get_header();
 ?>
 
 <div id="primary" class="content-area">
-  <main id="main" class="site-main site-front-page">
+  <main id="main" class="site-main site-front-page<?php if ( is_paged() ) : ?> paged<?php endif; ?>">
     <div class="container">
 
       <?php

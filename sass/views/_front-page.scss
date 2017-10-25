@@ -79,6 +79,10 @@ body {
 
       .site-front-page {
 
+        &.paged {
+          background: #fbfbfb;
+        }
+
         .block {
           overflow: hidden;
           clear: both;

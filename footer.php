@@ -14,7 +14,7 @@
 </div><!-- #content -->
 
 <?php
-if ( is_front_page() ) :
+if ( is_front_page() && ! is_paged() ) :
   get_template_part( 'template-parts/dynamic-footer' );
 else :
 ?>

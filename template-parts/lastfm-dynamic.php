@@ -13,7 +13,7 @@ else :
   $cache = '/var/www/rollemaa.fi/public_html/lastfm.recent.cache';
 endif;
 
-$seconds_before_update = 20;
+$seconds_before_update = 120;
 $number_of_songs = 1;
 $socket_timeout = 3; // Seconds to wait for response from audioscrobbler
 ?>
