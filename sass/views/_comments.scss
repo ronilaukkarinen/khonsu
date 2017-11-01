@@ -14,7 +14,11 @@
     &#cnns-label {
       font-size: 16px;
       margin: 0;
-      color: #a0a0a0;      
+      color: #a0a0a0;
+
+      @media(max-width: $container-mobile) {
+        font-size: 13px;
+      }
     }
   }
 
@@ -47,11 +51,12 @@
             background: darken(#a0a0a0, 15%);
           }
         }
-      }      
+      }
 
       input[type="checkbox"] {
         position: absolute; // Take it out of document flow
         opacity: 0; // Hide it
+        max-width: 2rem;
 
         + label {
           position: relative;
@@ -62,7 +67,7 @@
         // Box.
         + label:before {
           content: '';
-          margin-right: .8rem;
+          margin-right: .6rem;
           margin-bottom: 1rem;
           display: inline-block;
           vertical-align: text-top;
@@ -73,6 +78,10 @@
           border-radius: 3px;
           position: relative;
           top: 2px;
+
+          @media(max-width: $container-ipad) {
+            top: 0;
+          }
         }
 
         // Box hover
