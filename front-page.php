@@ -10,7 +10,7 @@
  * @package khonsu
  */
 
-if ( is_front_page() && ! is_paged() && ! is_admin() ) :
+if ( is_front_page() && ! is_paged() ) :
   include( TEMPLATEPATH . '/inc/cache-start.php' );
 endif;
 
@@ -57,6 +57,6 @@ get_header();
 <?php
 get_footer();
 
-if ( is_front_page() && ! is_paged() && ! is_admin() ) :
+if ( is_front_page() && ! is_paged() ) :
   include( TEMPLATEPATH . '/inc/cache-end.php' );
 endif;
