@@ -126,7 +126,9 @@ function sanitize_output( $buffer ) {
 
 	return $buffer;
 }
-ob_start( 'sanitize_output' );
+if ( ! is_admin() ) :
+	ob_start( 'sanitize_output' );
+endif;
 
 /**
  * Wrap every image in post with a div
