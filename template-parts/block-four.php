@@ -5,17 +5,6 @@
  * @package khonsu
  */
 
-$hour = date( 'H', time() );
-if ( $hour > 6 && $hour <= 11 ) :
-  $message = 'Toivottavasti aamusi alkoi mukavasti! alla uusimmat jutut';
-elseif ( $hour > 11 && $hour <= 16 ) :
-  $message = 'Tässä uusimmat jutut iltapäiväsi ratoksi';
-elseif ( $hour > 16 && $hour <= 23 ) :
-  $message = 'Uusimmat tekstini iltaasi sisältöä lisäämään';
-else :
-  $message = 'Eikö uni tule? lue alta uusimpia tekstejäni';
-endif;
-
 $args = array(
 	'post_type' => 'post',
 	'posts_per_page' => 4,
@@ -30,7 +19,7 @@ if ( $loop->have_posts() ) : ?>
 
 	<header class="block-header block-header-smaller block-header-cols">
 		<div class="block-header-col-content">
-			<h2 class="block-title"><span><?php echo $message; ?></span></h2>
+			<h2 class="block-title"><span><?php _e( 'Uusimmat tekstini elämääsi sisältöä lisäämään', 'khonsu' ); ?></span></h2>
 		</div>
 
 		<div class="block-header-col-sidebar">
