@@ -15,6 +15,18 @@ body {
                 height: auto;
               }
 
+              svg {
+                &.thumbs {
+                  position: relative;
+                  top: 3px;
+                  margin-right: 4px;
+
+                  &.thumbs-down {
+                    top: 5px;
+                  }
+                }
+              }
+
               h4 {
                 font-weight: 500;
                 color: #444;
