@@ -44,6 +44,19 @@ function clean( $string ) {
 }
 
 /**
+ * Custom shortcodes
+ */
+function thumbs_up() {
+  return file_get_contents( esc_url( get_theme_file_path( '/svg/thumbs-up.svg' ) ) );
+}
+add_shortcode( 'thumbs_up', 'thumbs_up' );
+
+function thumbs_down() {
+  return file_get_contents( esc_url( get_theme_file_path( '/svg/thumbs-down.svg' ) ) );
+}
+add_shortcode( 'thumbs_down', 'thumbs_down' );
+
+/**
  * Add shortcodes from New Era theme (legacy)
  *
  * Needed to get old articles to work properly.
