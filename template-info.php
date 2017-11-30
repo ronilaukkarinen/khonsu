@@ -16,12 +16,12 @@ get_header(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Tietoa minusta ja sivustosta', 'khonsu' ); ?></h1>
+						<h1 class="entry-title"><?php echo get_field( 'info_helper_title_main' ); ?></h1>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content template-info">
 
-						<h2><?php echo get_field( 'info_helper_title' ); ?></h2>
+						<h2><?php echo get_field( 'info_helper_title_secondary' ); ?></h2>
 
 						<?php if ( has_post_thumbnail() ) : ?>
 							<div class="author-image">
