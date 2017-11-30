@@ -21,7 +21,7 @@ get_header(); ?>
 
 					<div class="entry-content template-info">
 
-						<h2><?php _e( 'Kuka Rolle?', 'khonsu' ); ?></h2>
+						<h2><?php echo get_field( 'info_helper_title' ); ?></h2>
 
 						<?php if ( has_post_thumbnail() ) : ?>
 							<div class="author-image">
