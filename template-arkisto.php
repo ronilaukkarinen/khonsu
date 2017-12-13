@@ -68,7 +68,7 @@ get_header(); ?>
 								<ul>
 									<?php while ( $query->have_posts() ) :
 									$query->the_post();
-									?><li><a href="<?php echo get_the_permalink(); ?>" rel="bookmark"><?php echo get_the_title(); ?> (<?php echo get_post_meta( $post->ID, '_dmrp_count', true ); ?>)</a></li>
+									?><li><a href="<?php echo get_the_permalink(); ?>" rel="bookmark"><?php echo get_the_title(); ?> (<?php echo get_post_read_count( get_the_id(), 'alltime' ); ?>)</a></li>
 								<?php endwhile; ?>
 							</ul>
 						<?php endif;
