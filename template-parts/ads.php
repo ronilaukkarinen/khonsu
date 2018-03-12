@@ -5,9 +5,10 @@
  * @package khonsu
  */
 
-if ( is_home() && ! is_paged() ) :
+if ( is_home() && ! is_paged() ) : ?>
 
-$args = array(
+<div id="placement">
+<?php $args = array(
 	'post_type' => 'ads',
 	'posts_per_page' => 1,
 	'no_found_rows' => true,
@@ -22,7 +23,7 @@ $ad->the_post();
 if ( 'etusivu' === get_field( 'slotti' ) ) :
 if ( strtotime( get_field( 'eraantymispaiva' ) ) > time() ) : ?>
 
-	<div class="advertisement ad advert textad" id="placement">
+	<div class="advertisement ad advert textad">
 		<span class="close ad textad" data-wenk="Älä näytä enää näitä, kiitos" data-wenk-pos="top"><?php echo file_get_contents( esc_url( get_theme_file_path( '/svg/close.svg' ) ) ); ?></span>
 		
 		<div class="ad-top ad textad">
@@ -34,5 +35,6 @@ if ( strtotime( get_field( 'eraantymispaiva' ) ) > time() ) : ?>
 endif;
 endif;
 endwhile;
-endif;
-endif;
+endif; ?>
+</div>
+<?php endif;
