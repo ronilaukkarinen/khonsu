@@ -97,30 +97,6 @@
     var ua = navigator.userAgent,
     event = (ua.match(/iPad/i) || ua.match(/iPhone/)) ? 'touchstart' : 'click';
 
-    $('body').on(event, '.advertisement .close', function(e) {
-      $('.advertisement').addClass('fadeout');
-
-      Cookies.set( 'ad_cookie_status', 'dismiss', { expires: 3650 } );
-
-      $('.advertisement').addClass('fadeout');
-
-      setTimeout( function(){
-        $('.advertisement').remove();
-      }, 1000 );
-    });
-
-    $('.advertisement a.close').on('click', function(e) {
-      e.preventDefault();
-
-      Cookies.set( 'ad_cookie_status', 'dismiss', { expires: 3650 } );
-
-      $('.advertisement').addClass('fadeout');
-
-      setTimeout( function(){
-        $('.advertisement').remove();
-      }, 1000 );
-    });
-
     // Add class to all images under certain width
     $('.single-post .entry-content').find('img').each(function () {
      var $this = $(this), width = $this.width();
