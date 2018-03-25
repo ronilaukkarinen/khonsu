@@ -10,7 +10,7 @@
 // Fetch Untappd data and set up simple cache
 $untappd_url = 'https://api.untappd.com/v4/user/info/rolle/?client_id=' . getenv( 'UNTAPPD_CLIENT_ID' ) . '&client_secret=' . getenv( 'UNTAPPD_CLIENT_SECRET' );
 $untappd_cachefile = get_theme_file_path( 'inc/cache/untappd.json' );
-$untappd_cachetime = 7200; // Two hours
+$untappd_cachetime = 1800; // Half hour
 
 // If cache file does not exist, let's create it
 if ( ! file_exists( $untappd_cachefile ) ) {

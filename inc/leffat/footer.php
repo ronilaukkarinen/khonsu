@@ -41,7 +41,7 @@
 				<li><a target="_blank" class="movieo" href="https://movieo.me/users/rolle-rdvhg?lists_sort=trending&amp;item_type=lists" title="Movieo"><span>Movieo</span></a></li>
 				<li><a target="_blank" class="nextqueue" href="https://nextqueue.com/u/rolle/" title="NextQueue"><span>NextQueue</span></a></li>
 				<li><a target="_blank" class="tmdb" href="https://www.themoviedb.org/u/rolle" title="The Movie Database"><span>The Movie Database</span></a></li>
-				<li><a target="_blank" class="tasteio" href="https://www.taste.io/users/roni.laukkarinen" title="Taste.io"><span>Taste.io</span></a></li>
+				<li><a target="_blank" class="tasteio" href="https://www.taste.io/users/rolle" title="Taste.io"><span>Taste.io</span></a></li>
 				<li><a target="_blank" class="movix" href="https://movix.ai" title="Movix.ai"><span>Movix.ai</span></a></li>
 			</ul>
 		</div>
