@@ -5,8 +5,42 @@
 // classes and other WordPress editor formatting.
 // ------------------------------------------------
 
-body {
+// Legacy stuff
+.post-right img {
+  border: 0;
+}
 
+.post-right a:hover {
+  color: #6f9a27;
+}
+
+.flickrtemplate {
+  float: right;
+  margin: 12px 100px 0 25px;
+  color: #888;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1.4em;
+  text-align: left;
+  max-width: 120px;
+}
+
+.flickrtemplate div {
+  margin: 6px 6px 7px 2px;
+}
+
+.flickrtemplate img {
+  padding: 0;
+}
+
+.flickrtemplate img,
+.flickrtemplate a {
+  border: 0;
+}
+
+body {
   .container {
 
     // WordPress alignments
@@ -40,7 +74,7 @@ body {
     del {
       text-decoration: line-through;
       opacity: .6;
-    }    
+    }
   }
 
   // WordPress captions
