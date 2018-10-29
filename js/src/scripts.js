@@ -58,7 +58,7 @@
   $(function() {
 
     // RSS feeds on front page
-    $('.block-network .column-twitter').rss('https://twitrss.me/twitter_user_to_rss/?user=rolle', { limit: 2, ssl: true, layoutTemplate: '<div class="column column-twitter">{entries}</div>',
+    $('.block-network .column-twitter').rss('https://twitrss.me/twitter_search_to_rss/?term=from%253Arolle', { limit: 2, ssl: true, layoutTemplate: '<div class="column column-twitter">{entries}</div>',
       entryTemplate: '<h4><a href="{url}">{title}</a></h4><div class="meta"><div class="meta-avatar" style="background-image: url(\'https://www.rollemaa.fi/content/themes/khonsu/images/avatar-twitter.jpg\');"></div><div class="meta-title-stuff"><h5><a href="https://twitter.com/rolle">@rolle Twitterissä</a></h5><h6><time datetime="{date}">{date}</time></h6></div></div>', dateFormat: 'D.M.Y', effect: 'show'
     });
     $('.block-network .column-huurteinen').rss('https://www.huurteinen.fi/feed/', { limit: 1, ssl: true, layoutTemplate: '<div class="column">{entries}</div>',
