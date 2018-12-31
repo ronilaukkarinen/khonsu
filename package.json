@@ -26,12 +26,11 @@
   "dependencies": {
     "jeet": "^7.1.0",
     "js-cookie": "^2.1.4",
-    "lint-html-with-scss-css": "^1.1.0",
     "luxbar": "^0.3.2",
     "moveto": "^1.6.1",
     "normalize.css": "^7.0.0",
     "sass-web-fonts": "^2.0.2",
     "sassboilerplate": "^0.1.0",
-    "slick-carousel": "^1.6.0"
+    "what-input": "^5.1.2"
   }
 }

@@ -401,7 +401,7 @@ setlocale( LC_ALL, 'fi_FI.utf8' );
  * Enqueue scripts and styles.
  */
 function khonsu_scripts() {
-	$khonsu_template = 'global';
+	$khonsu_template = 'global.min';
 
 	// Styles.
 	wp_enqueue_style( 'styles', get_theme_file_uri( "css/{$khonsu_template}.css" ), array(), filemtime( get_theme_file_path( "css/{$khonsu_template}.css" ) ) );
