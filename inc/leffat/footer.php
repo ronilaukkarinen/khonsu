@@ -7,14 +7,6 @@
 
 ?>
 
-<div class="suositukset">
-	<div class="container">
-
-		<?php gravity_form( 1, $display_title = true, $display_description = true, $display_inactive = false, $ajax = false, $echo = true ); ?>
-
-	</div>
-</div>
-
 <div class="somesetti">
 	<div class="container">
 
@@ -80,7 +72,7 @@
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<!-- End Matomo Code -->	
+<!-- End Matomo Code -->
 <?php endif; ?>
 
 </body>
