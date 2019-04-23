@@ -43,7 +43,7 @@ function khonsu_ads() {
     'labels'                => $labels,
     'supports'              => array( 'title', 'revisions', 'post-formats', ),
     'hierarchical'          => false,
-    'public'                => true,
+    'public'                => false,
     'show_ui'               => true,
     'show_in_menu'          => true,
     'menu_position'         => 5,
@@ -52,8 +52,8 @@ function khonsu_ads() {
     'show_in_nav_menus'     => true,
     'can_export'            => true,
     'has_archive'           => false,   
-    'exclude_from_search'   => true,
-    'publicly_queryable'    => true,
+    'exclude_from_search'   => false,
+    'publicly_queryable'    => false,
     'capability_type'       => 'page',
   );
   register_post_type( 'ads', $args );
