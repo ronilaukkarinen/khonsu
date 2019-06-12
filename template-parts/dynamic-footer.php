@@ -16,9 +16,9 @@ endif;
 
       <?php
         get_template_part( 'template-parts/instagram' );
-        get_template_part( 'template-parts/lastfm' );
-        get_template_part( 'template-parts/trakt' );
-        get_template_part( 'template-parts/foursquare' );
+        //get_template_part( 'template-parts/lastfm' );
+        //get_template_part( 'template-parts/trakt' );
+        //get_template_part( 'template-parts/foursquare' );
         get_template_part( 'template-parts/albums' );
         get_template_part( 'template-parts/untappd' );
       ?>
