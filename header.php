@@ -22,11 +22,22 @@
 <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/icon-retina.png">
 
 <?php wp_head(); ?>
+
+<?php if ( is_singular() ) : ?>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8523880252818258",
+    enable_page_level_ads: true
+  });
+</script>
+<?php endif; ?>
+
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'khonsu' ); ?></a>
+  <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'khonsu' ); ?></a>
 
   <?php if ( ! is_single() ) : ?>
     <header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
@@ -76,7 +87,7 @@
               ) ); ?>
 
           </nav><!-- #site-navigation -->
-        </div><!-- .container -->
+        </div><!-- .container -->          
       </div><!-- .silver-lining -->
       <?php endif; ?>
     </div><!-- .header-inner-->
@@ -84,4 +95,4 @@
     </header>
   <?php endif; ?>
 
-	<div id="content" class="site-content">
+  <div id="content" class="site-content">
