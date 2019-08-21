@@ -9,7 +9,8 @@
 $color-links: #2f485d;
 $color-alt: #4e789c;
 $color-hover: #606c76;
-$color-body: #333;
+$color-body: #222;
+$color-white: #fff;
 $color-headings: #191919;
 $color-body-darker: #444;
 $color-grey: #dadfe1;
@@ -44,11 +45,24 @@ $layout-max-width: 100%;
 $container-default-pad-x: 4rem; // Default padding between containers horizontally. Tweak _general.scss if needed.
 $container-default-pad-y: 4rem; // Default vertical padding for containers
 $grid-base-size: 1000px; // Layout container max width on desktop. This is default .container size
-$article-max-width: 700px; // Max width for articles
+$article-max-width: 750px; // Max width for articles
 $container-mobile: 480px;
 $container-desktop: 1200px;
 $container-ipad: 770px;
 $container-ipad-landscape: 1024px;
+
+// Paddings
+$padding-default-rows-mobile: 5rem;
+$padding-default-cols-mobile: 2rem;
+$padding-general-content-box: 2rem;
+$padding-general-content-box-ipad: 2rem;
+$padding-general-content-box-mobile: 2rem;
+$margin-general-offset: -8rem;
+$padding-accordion-content: 2.5rem;
+$padding-accordion-content-mobile: 2rem;
+
+// Transition duration and animations
+$transition-duration: .6s;
 
 // Where navigation transforms into responsive - scale your window width down to test
 $responsivenav: 480px;

@@ -86,7 +86,7 @@ body {
         input[type="week"],
         input[type="email"],
         input[type="search"] {
-          @extend .default;
+          @extend %default;
           font-family: $font-base;
           background: #fff;
           border: 0;

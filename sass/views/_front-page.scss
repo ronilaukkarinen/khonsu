@@ -9,7 +9,6 @@
 body {
   #page {
     .site-content {
-
       header.block-header {
         padding-bottom: 20px;
         margin-bottom: 30px;
@@ -19,7 +18,7 @@ body {
         &.block-header-cols {
           overflow: hidden;
 
-          @media(min-width: 600px) {
+          @media (min-width: 600px) {
             height: 41px;
             overflow: visible;
           }
@@ -28,7 +27,7 @@ body {
         .block-header-col-content {
           @include column(2/3);
 
-          @media(max-width: 600px) {
+          @media (max-width: 600px) {
             display: block;
             height: auto;
             padding-bottom: 18px;
@@ -49,7 +48,7 @@ body {
             padding-bottom: 20px;
             height: 40px;
 
-            @media(max-width: 600px) {
+            @media (max-width: 600px) {
               height: auto;
               overflow: hidden;
             }
@@ -59,11 +58,11 @@ body {
               display: inline-block;
               height: 41px;
 
-              @media(max-width: $container-ipad) {
+              @media (max-width: $container-ipad) {
                 padding-bottom: 17px;
               }
 
-              @media(max-width: 600px) {
+              @media (max-width: 600px) {
                 border: 0;
               }
             }
@@ -91,7 +90,7 @@ body {
             margin-bottom: 60px;
             margin-top: 30px;
 
-            @media(max-width: $container-ipad) {
+            @media (max-width: $container-ipad) {
               .entry {
                 .entry-featured-image,
                 .entry-details {
@@ -101,14 +100,14 @@ body {
                   }
                 }
               }
-            }            
+            }
           }
 
           &.block-random {
             margin-bottom: 60px;
 
             // Hack for displaying featured images in dynamic loaded content
-            @media(max-width: $container-ipad) {
+            @media (max-width: $container-ipad) {
               .entry {
                 .entry-featured-image,
                 .entry-details {
@@ -119,7 +118,7 @@ body {
                   }
 
                   // Smaller iPhones
-                  @media(max-width: 330px) {
+                  @media (max-width: 330px) {
                     min-height: 120px;
                   }
                 }
@@ -180,7 +179,7 @@ body {
                       color: $color-alt;
                       font-family: $font-headings;
 
-                      @media(max-width: 540px) {
+                      @media (max-width: 540px) {
                         top: 0;
                         left: 0;
                         position: relative;
@@ -198,25 +197,25 @@ body {
             border: 1px solid #e5e5e5;
             border-radius: 2px;
 
-            @media(max-width: $container-ipad) {
+            @media (max-width: $container-ipad) {
               @include stack();
             }
 
             .entry-featured-image {
               @include background-cover();
-              @include span(2/5);              
+              @include span(2/5);
               position: relative;
 
-              @media(min-width: $container-ipad) {
+              @media (min-width: $container-ipad) {
                 height: 250px;
               }
 
-              @media(max-width: $container-ipad) {
+              @media (max-width: $container-ipad) {
                 height: auto;
               }
 
               // Smaller iPhones
-              @media(max-width: 330px) {
+              @media (max-width: 330px) {
                 @include stack();
               }
             }
@@ -226,22 +225,23 @@ body {
               padding: 20px;
               position: relative;
 
-              @media(min-width: $container-ipad) {
+              @media (min-width: $container-ipad) {
                 height: 250px;
               }
 
-              @media(max-width: $container-mobile) {
+              @media (max-width: $container-mobile) {
                 height: auto;
               }
 
               // Smaller iPhones
-              @media(max-width: 330px) {
+              @media (max-width: 330px) {
                 @include stack();
               }
 
               h3 {
                 font-size: 18px;
-                margin-bottom: 10px;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
 
                 a {
                   color: $color-headings;
@@ -258,7 +258,7 @@ body {
               p {
                 display: block; // Fallback for non-webkit
                 display: -webkit-box;
-                height: $font-size*$line-height*$lines-to-show; // Fallback for non-webkit
+                height: $font-size * $line-height * $lines-to-show; // Fallback for non-webkit
                 font-size: $font-size;
                 line-height: $line-height;
                 -webkit-line-clamp: $lines-to-show;
@@ -268,7 +268,7 @@ body {
                 color: #888;
                 margin-top: 0;
 
-                @media(max-width: $container-mobile) {
+                @media (max-width: $container-mobile) {
                   display: none;
                 }
 
@@ -282,7 +282,7 @@ body {
                 bottom: 20px;
                 height: 20px;
 
-                @media(max-width: $container-mobile) {
+                @media (max-width: $container-mobile) {
                   bottom: 15px;
 
                   .dot-divider,
@@ -322,9 +322,9 @@ body {
               font-weight: 500;
               letter-spacing: 0;
               display: inline-block;
-              line-height: auto;        
-              
-              @media(min-width: $container-ipad) {
+              line-height: auto;
+
+              @media (min-width: $container-ipad) {
                 top: -2px;
               }
 
@@ -336,7 +336,7 @@ body {
                 letter-spacing: 0;
                 display: inline-block;
 
-                @media(max-width: $container-mobile) {
+                @media (max-width: $container-mobile) {
                   line-height: .5;
                   position: relative;
                   top: 10px;
@@ -358,7 +358,7 @@ body {
               @include column(1/3);
               overflow: hidden;
 
-              @media(max-width: 600px) {
+              @media (max-width: 600px) {
                 @include stack();
                 margin-bottom: 20px;
               }

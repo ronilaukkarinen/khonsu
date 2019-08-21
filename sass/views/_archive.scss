@@ -7,7 +7,6 @@ body {
   }
 
   .site-content {
-
     p.custom-pagination {
       opacity: .4;
       transition: all .55s;
@@ -15,8 +14,8 @@ body {
       a {
         color: #444;
         transition: all .22s;
-        margin-left: .2rem;
-        margin-right: .2rem;
+        margin-left: 5px;
+        margin-right: 5px;
 
         &.current {
           color: #333;
@@ -69,7 +68,6 @@ body {
       }
 
       .entry-stack-header {
-
         p,
         .dot-divider {
           font-size: 13px;
@@ -100,7 +98,7 @@ body {
           font-size: 14px;
           color: #757575;
 
-          @media(max-width: $container-mobile) {
+          @media (max-width: $container-mobile) {
             padding: 3px 0;
           }
 

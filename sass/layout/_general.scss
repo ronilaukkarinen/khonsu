@@ -10,7 +10,7 @@
   position: relative;
 
   &:after {
-    padding: 5px .8rem;
+    padding: 5px 8px;
     bottom: 70%;
   }
 }
@@ -156,36 +156,38 @@ body {
 
     @if $grid-type == fluid {
       @include center($max_width: $grid-base-size, $pad: 0);
-    } @else if $grid-type == snappy {
+    }
 
+    @else if $grid-type == snappy {
       width: 100%;
       padding-left: 0;
       padding-right: 0;
 
-      @media(min-width: $container-ipad) {
+      @media (min-width: $container-ipad) {
         width: 700px;
       }
 
-      @media(min-width: $container-ipad-landscape) {
+      @media (min-width: $container-ipad-landscape) {
         width: 900px;
       }
 
-      @media(min-width: $container-desktop) {
+      @media (min-width: $container-desktop) {
         width: $grid-base-size;
       }
+    }
 
-    } @else {
+    @else {
       @include center($max_width: $grid-base-size, $pad: $container-default-pad-x);
     }
 
-    @media(max-width: $grid-base-size + 100px) {
-      padding-left: $container-default-pad-x/2;
-      padding-right: $container-default-pad-x/2;
+    @media (max-width: $grid-base-size + 100px) {
+      padding-left: $container-default-pad-x / 2;
+      padding-right: $container-default-pad-x / 2;
     }
 
-    @media(max-width: $container-ipad - 10px) {
-      padding-top: $container-default-pad-y/2;
-      padding-bottom: $container-default-pad-y/2;
+    @media (max-width: $container-ipad - 10px) {
+      padding-top: $container-default-pad-y / 2;
+      padding-bottom: $container-default-pad-y / 2;
     }
   }
 
