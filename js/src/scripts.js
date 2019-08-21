@@ -52,27 +52,24 @@
         }, 500 );
       }
     }
-  });  
+  });
 
   // Document ready
   $(function() {
 
     // RSS feeds on front page
-    $('.block-network .column-twitter').rss('https://twitrss.me/mobile_twitter_to_rss/?user=rolle', { limit: 2, ssl: true, layoutTemplate: '<div class="column column-twitter">{entries}</div>',
-      entryTemplate: '<h4><a href="{url}">{title}</a></h4><div class="meta"><div class="meta-avatar" style="background-image: url(\'https://www.rollemaa.fi/content/themes/khonsu/images/avatar-twitter.jpg\');"></div><div class="meta-title-stuff"><h5><a href="https://twitter.com/rolle">@rolle Twitterissä</a></h5><h6><time datetime="{date}">{date}</time></h6></div></div>', dateFormat: 'D.M.Y', effect: 'show'
-    });
     $('.block-network .column-huurteinen').rss('https://www.huurteinen.fi/feed/', { limit: 1, ssl: true, layoutTemplate: '<div class="column">{entries}</div>',
       entryTemplate: '<h4><a href="{url}">{title}</a></h4><div class="meta"><div class="meta-avatar" style="background-image: url(\'https://www.rollemaa.fi/content/themes/khonsu/images/avatar-huurteinen.png\');"></div><div class="meta-title-stuff"><h5><a href="https://www.huurteinen.fi">Huurteinen</a></h5><h6><time datetime="{date}">{date}</time></h6></div></div>', dateFormat: 'D.M.Y', effect: 'show'
     });
+
     $('.block-network .column-leffat').rss('https://www.rollemaa.fi/leffat-rss.php', { limit: 1, ssl: true, layoutTemplate: '<div class="column">{entries}</div>',
       entryTemplate: '<h4><a href="{url}">Elokuva-arvio: {title}</a></h4><div class="meta"><div class="meta-avatar" style="background-image: url(\'https://www.rollemaa.fi/content/themes/khonsu/images/avatar-leffat.png\');"></div><div class="meta-title-stuff"><h5><a href="https://www.rollemaa.fi/leffat">Rollen leffablogi</a></h5><h6><time datetime="{date}">{date}</time></h6></div></div>', dateFormat: 'D.M.Y', effect: 'show'
     });
+
     $('.block-network .column-geekylifestyle').rss('https://geekylifestyle.com/feed/', { limit: 1, ssl: true, layoutTemplate: '<div class="column">{entries}</div>',
       entryTemplate: '<h4><a href="{url}">{title}</a></h4><div class="meta"><div class="meta-avatar" style="background-image: url(\'https://www.rollemaa.fi/content/themes/khonsu/images/avatar-geekylifestyle.jpg\');"></div><div class="meta-title-stuff"><h5><a href="https://geekylifestyle.com">Geeky Lifestyle</a></h5><h6><time datetime="{date}">{date}</time></h6></div></div>', dateFormat: 'D.M.Y', effect: 'show'
     });
-    $('.block-network .column-medium').rss('https://medium.com/feed/@rolle/', { limit: 1, ssl: true, layoutTemplate: '<div class="column">{entries}</div>',
-      entryTemplate: '<h4><a href="{url}">{title}</a></h4><div class="meta"><div class="meta-avatar" style="background-image: url(\'https://www.rollemaa.fi/content/themes/khonsu/images/avatar-medium.png\');"></div><div class="meta-title-stuff"><h5><a href="https://medium.com/@rolle">Stories by Roni Laukkarinen on Medium</a></h5><h6><time datetime="{date}">{date}</time></h6></div></div>', dateFormat: 'D.M.Y', effect: 'show'
-    });
+
     $('.block-network .column-dude').rss('https://www.dude.fi/feed', { limit: 1, ssl: true, layoutTemplate: '<div class="column">{entries}</div>',
       entryTemplate: '<h4><a href="{url}">{title}</a></h4><div class="meta"><div class="meta-avatar" style="background-image: url(\'https://www.rollemaa.fi/content/themes/khonsu/images/avatar-dude.png\');"></div><div class="meta-title-stuff"><h5><a href="https://www.dude.fi/blogi">Digitoimisto Dude</a></h5><h6><time datetime="{date}">{date}</time></h6></div></div>', dateFormat: 'D.M.Y', effect: 'show'
     });
@@ -161,7 +158,7 @@
       }, 500, 'swing', function () {
         window.location.hash = target;
       });
-    });    
+    });
 
     // Show other fields only when starting typing comment
     $('textarea#comment').keyup(function(){
