@@ -82,6 +82,7 @@ tr,
   @include responsive-font($font-min-size, $font-max-size);
   letter-spacing: -.003em;
   font-weight: 300;
+  line-height: $font-base-line-height;
 }
 
 p {
@@ -148,10 +149,12 @@ h6,
 
 // Lists
 ul {
-  list-style: circle;
+  list-style: bullet;
   padding-left: 2.7rem;
+  line-height: $font-base-line-height;
 
   li {
+    line-height: $font-base-line-height;
     padding-left: .35rem;
   }
 }
@@ -163,6 +166,11 @@ ol {
 ol,
 ul {
   padding-bottom: 1rem;
+  line-height: $font-base-line-height;
+
+  li {
+    line-height: $font-base-line-height;
+  }
 }
 
 // Bold.
