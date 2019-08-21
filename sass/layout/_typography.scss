@@ -8,6 +8,8 @@
 
 // Set up self-hosted fonts here
 // Set up self-hosted fonts here
+@include fontFace('Avenir', '../fonts/Avenir-Regular', 400);
+@include fontFace('Avenir', '../fonts/Avenir-Bold', 700);
 @include fontFace('Charter', '../fonts/charter_regular-webfont', 400);
 @include fontFace('Charter', '../fonts/charter_italic-webfont', 400, italic);
 @include fontFace('Charter', '../fonts/charter_bold-webfont', 700);

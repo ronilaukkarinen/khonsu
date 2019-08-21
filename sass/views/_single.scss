@@ -3,9 +3,13 @@ body.single-post #page .site-content .post {
 
   // Gutenberg
   .container.container-article {
-    padding-top: 0;
     padding-left: 0;
     padding-right: 0;
+    padding-top: 0;
+
+    @media (max-width: $container-ipad) {
+      padding-top: 2rem;
+    }
   }
 
   .wp-block-image {
