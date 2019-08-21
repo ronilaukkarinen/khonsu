@@ -2,7 +2,7 @@ body.single-post #page .site-content .post {
   margin-bottom: 0;
 
   // Gutenberg
-  .container {
+  .container.container-article {
     padding-top: 0;
     padding-left: 0;
     padding-right: 0;
@@ -211,8 +211,8 @@ body.single-post #page .site-content .post {
     text-align: center;
   }
 
-  .button {
-    padding: 4px 25px;
+  a.button {
+    padding: 5px 25px;
     font-size: 13px;
   }
 
@@ -266,7 +266,7 @@ body.single-post #page .site-content .post {
   h3 {
     font-size: 18px;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
     font-weight: 600;
   }
 
@@ -276,7 +276,7 @@ body.single-post #page .site-content .post {
 
     &.description {
       margin-top: 0;
-      margin-bottom: 15px;
+      margin-bottom: 2rem;
 
       @media (max-width: $container-mobile) {
         margin-bottom: 20px;
