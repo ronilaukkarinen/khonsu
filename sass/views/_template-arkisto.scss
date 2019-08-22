@@ -2,7 +2,7 @@ body {
   #page {
     .template-arkisto {
       h2 {
-        @include responsive-font(3vw, 20px, 24px);
+        @include responsive-font(20px, 24px);
         margin-bottom: 20px;
         color: #222;
 

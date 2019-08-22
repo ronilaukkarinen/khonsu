@@ -38,7 +38,7 @@
     max-width: 1000px;
 
     h1 {
-      @include responsive-font(6vw, 32px, 100px);
+      @include responsive-font(32px, 100px);
       margin-top: 0;
       margin-bottom: 10px;
       font-weight: 900;
@@ -46,7 +46,7 @@
     }
 
     p {
-      @include responsive-font(4vw, 20px, 28px);
+      @include responsive-font(20px, 28px);
       margin: 0;
       line-height: 1.5;
       color: rgba(#fff, .85);

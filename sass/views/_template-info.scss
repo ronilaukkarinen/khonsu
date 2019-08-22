@@ -8,17 +8,17 @@ body {
       width: 100%;
       text-align: center;
 
-      @media(max-width: 770px) {
+      @media (max-width: 770px) {
         max-width: 200px;
         max-height: 200px;
       }
 
-      @media(max-width: 600px) {
+      @media (max-width: 600px) {
         max-width: 180px;
         max-height: 180px;
       }
 
-      @media(max-width: $container-mobile) {
+      @media (max-width: $container-mobile) {
         float: none;
         max-width: 100%;
         text-align: left;
@@ -35,17 +35,17 @@ body {
         border-radius: 50%;
         margin-bottom: 10px;
 
-        @media(max-width: 770px) {
+        @media (max-width: 770px) {
           width: 160px;
           height: 160px;
         }
 
-        @media(max-width: 600px) {
+        @media (max-width: 600px) {
           width: 120px;
           height: 120px;
         }
 
-        @media(max-width: $container-mobile) {
+        @media (max-width: $container-mobile) {
           width: 180px;
           height: 180px;
         }
@@ -59,7 +59,7 @@ body {
         text-align: center;
         margin: 5px 0;
 
-        @media(max-width: $container-mobile) {
+        @media (max-width: $container-mobile) {
           text-align: left;
           font-size: 16px;
           position: relative;
@@ -70,7 +70,7 @@ body {
 
     .template-info {
       h2 {
-        @include responsive-font(3vw, 20px, 24px);
+        @include responsive-font(20px, 24px);
         margin-bottom: 20px;
         color: #222;
       }

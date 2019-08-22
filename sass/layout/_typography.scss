@@ -122,13 +122,13 @@ h1,
 
 h2,
 %h2 {
-  @include responsive-font(27px, 45px);
+  @include responsive-font(27px, 42px);
   margin-bottom: 2rem;
 }
 
 h3,
 %h3 {
-  @include responsive-font(25px, 35px);
+  @include responsive-font(25px, 32px);
   margin-bottom: 2rem;
 }
 

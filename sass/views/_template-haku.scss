@@ -1,16 +1,15 @@
 body {
   #page {
-
     form {
       input#s {
         width: 100%;
         max-width: 200px;
 
-        @media(min-width: 650px) {
+        @media (min-width: 650px) {
           max-width: 400px;
         }
 
-        @media(max-width: $container-mobile) {
+        @media (max-width: $container-mobile) {
           @include stack();
           max-width: 100%;
           margin-bottom: 10px;
@@ -23,7 +22,7 @@ body {
         color: #fff;
         border-color: $color-links;
 
-        @media(max-width: $container-mobile) {
+        @media (max-width: $container-mobile) {
           @include stack();
           max-width: 100%;
         }
@@ -32,7 +31,7 @@ body {
 
     .template-haku {
       h2 {
-        @include responsive-font(3vw, 20px, 24px);
+        @include responsive-font(20px, 24px);
         margin-bottom: 20px;
         color: #222;
 
