@@ -94,10 +94,14 @@ body.single-post #page .site-content .post {
   }
 
   .entry-content {
-    padding-top: $padding-general-content-box;
+    padding-top: 5rem;
     padding-left: $padding-general-content-box;
     padding-right: $padding-general-content-box;
     padding-bottom: 0;
+
+    @media (max-width: $container-mobile) {
+      padding-top: 2rem;
+    }
 
     .wp-block-gallery {
       @extend .columns;
