@@ -59,6 +59,62 @@ $vertical-rhythm: true;
 
 @include typographic();
 
+// Trakt notification
+.trakt-note {
+  background: #ec2124;
+  color: #fff;
+  display: flex;
+  width: 100%;
+  padding: 10px 5px;
+  align-items: center;
+  justify-content: center;
+  font-family: $font__headings;
+  border-bottom: 3px solid darken(#d6221f, 10%);
+  position: relative;
+  transition: all .22s;
+
+  &:hover {
+    background: darken(#d6221f, 10%);
+  }
+
+  .global-link {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent;
+  }
+
+  .container {
+    align-items: center;
+    display: flex;
+
+    @media (max-width: $container-mobile) {
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  p {
+    font-family: $font__headings;
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  svg {
+    fill: #fff;
+    margin-right: 20px;
+
+    @media (max-width: $container-mobile) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
 // Font smoothing options
 body,
 html * {
