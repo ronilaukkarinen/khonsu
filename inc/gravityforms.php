@@ -31,7 +31,7 @@ function add_submission_id( $entry, $form ) {
 	$filmurl_field = 6;
 	$imdbid = $entry['1'];
 
-	if ( file_exists( dirname( __FILE__ ) . '/.dev' ) ) {
+	if( getenv('WP_ENV') == "development" || file_exists( dirname( __FILE__ ) . '/.dev' ) ) {
 		$paikallinen_tiedosto = '/var/www/rollemaa/leffa/poster-image-db/' . $imdbid . '.jpg';
 		$paikallinen_backdrop = '/var/www/rollemaa/leffa/poster-image-db/' . $imdbid . '-backdrop.jpg';
 	} else {
@@ -64,7 +64,7 @@ function add_submission_id( $entry, $form ) {
 		copy( $kuvan_osoite, $paikallinen_tiedosto );
 		copy( $backdrop_osoite, $paikallinen_backdrop );
 	}
-	if ( file_exists( dirname( __FILE__ ) . '/.dev' ) ) {
+	if( getenv('WP_ENV') == "development" || file_exists( dirname( __FILE__ ) . '/.dev' ) ) {
 		$paikallinen_metadata = '/var/www/rollemaa/leffa/metadata/' . $imdbid . '.json';
 	} else {
 		$paikallinen_metadata = '/var/www/rollemaa.fi/public_html/leffa/metadata/' . $imdbid . '.json';
@@ -117,7 +117,7 @@ function form_notification_email_1( $notification, $form, $entry ) {
 	$imdbid = rgar( $entry, '1' );
 	$suosittelija = rgar( $entry, '4' );
 
-	if ( file_exists( dirname( __FILE__ ) . '/.dev' ) ) {
+	if( getenv('WP_ENV') == "development" || file_exists( dirname( __FILE__ ) . '/.dev' ) ) {
 		$paikallinen_tiedosto = '/var/www/rollemaa/leffa/poster-image-db/' . $imdbid . '.jpg';
 		$paikallinen_backdrop = '/var/www/rollemaa/leffa/poster-image-db/' . $imdbid . '-backdrop.jpg';
 	} else {
@@ -150,7 +150,7 @@ function form_notification_email_1( $notification, $form, $entry ) {
 		copy( $kuvan_osoite, $paikallinen_tiedosto );
 		copy( $backdrop_osoite, $paikallinen_backdrop );
 	}
-	if ( file_exists( dirname( __FILE__ ) . '/.dev' ) ) {
+	if( getenv('WP_ENV') == "development" || file_exists( dirname( __FILE__ ) . '/.dev' ) ) {
 		$paikallinen_metadata = '/var/www/rollemaa/leffa/metadata/' . $imdbid . '.json';
 	} else {
 		$paikallinen_metadata = '/var/www/rollemaa.fi/public_html/leffa/metadata/' . $imdbid . '.json';

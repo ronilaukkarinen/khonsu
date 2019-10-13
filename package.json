@@ -24,6 +24,7 @@
     "wenk": "^1.0.6"
   },
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "jeet": "^7.1.0",
     "js-cookie": "^2.1.4",
     "luxbar": "^0.3.2",
@@ -31,6 +32,7 @@
     "normalize.css": "^7.0.0",
     "sass-web-fonts": "^2.0.2",
     "sassboilerplate": "^0.1.0",
+    "typographic": "^3.0.0",
     "what-input": "^5.1.2"
   }
 }

@@ -1,4 +1,5 @@
 @charset 'utf-8';
+
 @import 'jeet/scss/index';
 $font__text: 'Leffateksti', Helvetica, Arial;
 $font__headings: 'Leffaotsikko', Helvetica, Arial;
@@ -12,10 +13,10 @@ $container-mobile: 600px;
 
 // Typography settings
 // Font awesome icon fonts
-@import '../../../../../bower_components/font-awesome/scss/font-awesome';
+@import 'font-awesome/scss/font-awesome';
 
 // Import Typographic
-@import '../../../../../bower_components/typographic/scss/typographic';
+@import 'typographic/scss/typographic';
 
 @mixin fontFace($family, $src, $weight: normal, $style: normal) {
   @font-face {
@@ -43,7 +44,6 @@ $container-mobile: 600px;
 
 // SF Movie Poster
 @include fontFace('Julisteteksti', '../fonts/julisteteksti', 400);
-
 $line-height-ratio: 1.75;
 $header-ratio: $golden;
 $body-font: $font__text;
@@ -165,11 +165,11 @@ th {
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 code {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
   padding: 2px 4px;
   font-size: 90%;
   color: #c7254e;
@@ -1082,12 +1082,12 @@ p {
           span {
             padding: 0;
             color: rgba(#fff, .65);
-            font-family: "Julisteteksti", Helvetica, Arial;
+            font-family: 'Julisteteksti', Helvetica, Arial;
             font-size: 2.4rem;
             text-transform: uppercase;
 
             &.juliste {
-              font-family: "Juliste", Helvetica, Arial;
+              font-family: 'Juliste', Helvetica, Arial;
               font-size: 2rem;
               text-transform: none;
             }
@@ -1750,7 +1750,7 @@ input.q {
     color: #ccc;
 
     span {
-      font-family: "Playfair Display", serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 700;
       font-style: italic;
       color: #ccc;
