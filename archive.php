@@ -20,9 +20,9 @@ get_template_part('template-parts/hero', get_post_type()); ?>
 
       <div class="notification-box">
         <?php if ( is_tag() ) : ?>
-          <h3>Arkisto avainsanalle &quot;<?php echo $tag; ?>&quot;</h3>
+          <h3>Arkisto avainsanalle &quot;<?php echo single_tag_title( '', false ); ?>&quot;</h3>
 
-          <p>Avainsanalla &quot;<?php echo $tag; ?>&quot; tägättyjä artikkeleja Rollemaassa on tällä hetkellä yhteensä huimat <?php $tag = $wp_query->get_queried_object();
+          <p>Avainsanalla &quot;<?php echo single_tag_title( '', false ); ?>&quot; tägättyjä artikkeleja Rollemaassa on tällä hetkellä yhteensä huimat <?php $tag = $wp_query->get_queried_object();
           echo $tag->count; ?> kpl.</strong></p>
         <?php endif; ?>
 
@@ -77,7 +77,7 @@ get_template_part('template-parts/hero', get_post_type()); ?>
 
         <?php endif; ?>
       </div><!-- .notification-box -->
-      
+
       <?php while ( have_posts() ) :
         the_post();
         get_template_part( 'template-parts/content' );
