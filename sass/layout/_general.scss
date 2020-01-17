@@ -124,7 +124,7 @@ body {
     p,
     li,
     span {
-      a {
+      a:not(.button):not(.post-edit-link) {
         @extend .link;
       }
     }
