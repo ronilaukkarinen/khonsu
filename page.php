@@ -34,6 +34,27 @@ get_header(); ?>
 				        'after'  => '</div>',
 				      ) );
 				    ?>
+
+            <?php if ( get_edit_post_link() ) { ?>
+            <footer class="entry-footer">
+              <?php edit_post_link(
+                sprintf(
+                  /* translators: %s: Name of current post. Only visible to screen readers */
+                  wp_kses(
+                    __( 'Muokkaa <span class="screen-reader-text">%s</span>', 'brand' ),
+                    array(
+                      'span' => array(
+                        'class' => array(),
+                      ),
+                    )
+                  ),
+                  get_the_title()
+                ),
+                '<span class="edit-link">',
+                '</span>'
+              ); ?>
+            </footer><!-- .entry-footer -->
+          <?php } ?>
 				  </div><!-- .entry-content -->
 
 				  <?php if ( get_edit_post_link() ) { ?>

@@ -22,7 +22,7 @@ get_header();
       <div class="container container-article" id="article-text-content">
         <div class="entry-content">
 
-          <?php 
+          <?php
           $post_year = get_the_time('Y');
           $now_year = date('Y');
           ?>
@@ -47,19 +47,26 @@ get_header();
           ?>
 
           <?php if ( get_edit_post_link() ) { ?>
-          <footer class="entry-footer">
-            <?php edit_post_link(
-              sprintf(
-                /* translators: %s: Name of current post */
-                esc_html__( 'Muokkaa %s', '_s' ),
-                the_title( '<span class="screen-reader-text">"', '"</span>', false )
-              ),
-              '<span class="edit-link">',
-              '</span>'
+            <footer class="entry-footer">
+              <?php edit_post_link(
+                sprintf(
+                  /* translators: %s: Name of current post. Only visible to screen readers */
+                  wp_kses(
+                    __( 'Muokkaa <span class="screen-reader-text">%s</span>', 'brand' ),
+                    array(
+                      'span' => array(
+                        'class' => array(),
+                      ),
+                    )
+                  ),
+                  get_the_title()
+                ),
+                '<span class="edit-link">',
+                '</span>'
               ); ?>
             </footer><!-- .entry-footer -->
-            <?php } ?>
-          
+          <?php } ?>
+
           <div class="author-info">
             <div class="author-col author-col-avatar">
               <img src="<?php echo get_template_directory_uri(); ?>/images/author-info.jpg" alt="Kuva Roni Laukkarisesta" />
@@ -78,14 +85,14 @@ get_header();
       </div><!-- .container-article -->
 
       <?php if ( function_exists( 'related_entries' ) ) : ?>
-        
+
       <div class="related">
         <div class="container container-related-posts">
 
           <header class="block-header block-header-smaller">
             <h2 class="block-title"><span>Lisää aiheeseen liittyvää luettavaa</span></h2>
           </header>
-                  
+
           <?php related_entries( array( 'use_template' => true, 'template_file' => 'yarpp-template-dude.php' ) ); ?>
         </div>
       </div>
@@ -97,7 +104,7 @@ get_header();
         comments_template();
         endif; ?>
 
-      </article><!-- #post-## -->    
+      </article><!-- #post-## -->
 
     <?php endwhile; ?>
 

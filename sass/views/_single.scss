@@ -34,6 +34,25 @@ body.single-post #page .site-content .post {
     margin-right: auto;
     background-color: $color-white;
 
+    &.twitter-tweet,
+    &.instagram-media,
+    &.wp-video {
+      width: 100% !important;
+      max-width: 750px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+
+      @media (max-width: 800px) {
+        padding-left: 4rem !important;
+        padding-right: 4rem !important;
+      }
+
+      @media (max-width: 480px) {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+      }
+    }
+
     &.alignwide {
       max-width: 1300px;
       width: 100%;
@@ -71,9 +90,9 @@ body.single-post #page .site-content .post {
     padding-left: $padding-general-content-box;
     padding-right: $padding-general-content-box;
 
-    @media (max-width: 1200px) {
-      padding-left: 0;
-      padding-right: 0;
+    @media (max-width: $article-max-width) {
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 
@@ -95,8 +114,8 @@ body.single-post #page .site-content .post {
 
   .entry-content {
     padding-top: 5rem;
-    padding-left: $padding-general-content-box;
-    padding-right: $padding-general-content-box;
+    padding-left: 0;
+    padding-right: 0;
     padding-bottom: 0;
 
     @media (max-width: $container-mobile) {
@@ -114,14 +133,15 @@ body.single-post #page .site-content .post {
     }
 
     @media (max-width: $container-ipad) {
-      padding: $padding-general-content-box-ipad;
+      padding-top: $padding-general-content-box-ipad;
+      padding-bottom: $padding-general-content-box-ipad;
     }
 
     @media (max-width: $container-mobile) {
       padding-top: $padding-general-content-box-mobile;
       padding-bottom: $padding-general-content-box-mobile;
-      padding-left: $padding-default-cols-mobile;
-      padding-right: $padding-default-cols-mobile;
+      padding-left: 0;
+      padding-right: 0;
     }
 
     p {

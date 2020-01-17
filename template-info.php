@@ -7,49 +7,36 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main">
+<div id="content" class="content-area">
+  <main role="main" id="main" class="site-main">
+    <div class="container container-page container-info">
 
-		<div class="container container-narrow">
-			<?php while ( have_posts() ) {
-				the_post(); ?>
+     <?php while ( have_posts() ) {
+      the_post(); ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<div class="entry-content template-info">
+      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-						<?php if ( has_post_thumbnail() ) : ?>
-							<div class="author-image">
-								<img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt="Rolle" />
+       <?php the_content(); ?>
 
-								<div class="author-image-caption">
-									<p><?php the_post_thumbnail_caption(); ?></p>
-								</div>
-							</div>
-							<?php endif;
+       <?php if ( get_edit_post_link() ) { ?>
+        <footer class="entry-footer">
+         <?php edit_post_link(
+          sprintf(
+           /* translators: %s: Name of current post */
+           esc_html__( 'Muokkaa %s', '_s' ),
+           the_title( '<span class="screen-reader-text">"', '"</span>', false )
+         ),
+          '<span class="edit-link">',
+          '</span>'
+        ); ?>
+      </footer><!-- .entry-footer -->
+    <?php } ?>
+  </article><!-- #post-## -->
 
-							the_content(); ?>
+<?php } ?>
+</div><!-- .container -->
 
-						</div><!-- .entry-content -->
+</main><!-- #main -->
+</div><!-- #primary -->
 
-						<?php if ( get_edit_post_link() ) { ?>
-						<footer class="entry-footer">
-							<?php edit_post_link(
-								sprintf(
-									/* translators: %s: Name of current post */
-									esc_html__( 'Muokkaa %s', '_s' ),
-									the_title( '<span class="screen-reader-text">"', '"</span>', false )
-								),
-								'<span class="edit-link">',
-								'</span>'
-								); ?>
-							</footer><!-- .entry-footer -->
-							<?php } ?>
-						</article><!-- #post-## -->
-
-						<?php } ?>
-					</div><!-- .container -->
-
-				</main><!-- #main -->
-			</div><!-- #primary -->
-
-			<?php get_footer();
+<?php get_footer();
