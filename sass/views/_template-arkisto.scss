@@ -45,6 +45,9 @@ body {
               transition: .33s all;
               font-weight: 400;
               text-transform: lowercase;
+              box-shadow: none !important;
+              background: transparent !important;
+              text-shadow: none !important;
 
               &:hover {
                 color: #000;
