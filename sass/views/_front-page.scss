@@ -15,6 +15,11 @@
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 500px) {
+    display: block;
+    padding-bottom: 0;
+  }
+
   p {
     font-size: 16px;
     margin: 0;
@@ -22,12 +27,23 @@
   }
 }
 
+@media (max-width: 500px) {
+  .block-header-col-sidebar {
+    padding-bottom: 0;
+    margin-top: 5px;
+  }
+}
+
 .block-header.block-header-cols {
   overflow: hidden;
 
-  @media (min-width: 600px) {
+  @media (min-width: 400px) {
     height: 41px;
     overflow: visible;
+  }
+
+  @media (max-width: 500px) {
+    height: auto;
   }
 }
 
@@ -35,15 +51,27 @@
   border-color: #d9d9d9;
   padding-bottom: 0;
 
+  @media (max-width: 500px) {
+    padding-bottom: 10px;
+  }
+
   h2.block-title {
     font-size: 20px;
     margin-bottom: 0;
     padding-bottom: 20px;
     height: 40px;
 
-    @media (max-width: 600px) {
+    @media (max-width: 500px) {
       height: auto;
-      overflow: hidden;
+      padding-bottom: 0;
+    }
+
+    @media (max-width: 420px) {
+      font-size: 19px;
+    }
+
+    @media (max-width: 330px) {
+      font-size: 18px;
     }
   }
 }
@@ -57,8 +85,10 @@
     padding-bottom: 17px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
+    height: auto;
     border: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -296,9 +326,7 @@ h2.block-title {
   line-height: 1.33;
 
   &.more {
-    float: right;
-    position: relative;
-    right: -5px;
+    text-align: right;
     font-size: 13px;
     text-transform: uppercase;
     color: #777;
@@ -318,12 +346,6 @@ h2.block-title {
       font-weight: 500;
       letter-spacing: 0;
       display: inline-block;
-
-      @media (max-width: $container-mobile) {
-        line-height: .5;
-        position: relative;
-        top: 10px;
-      }
     }
 
     svg {
@@ -344,7 +366,14 @@ h2.block-title {
     @media (max-width: 600px) {
       @include stack();
       margin-bottom: 20px;
+      margin-right: 0 !important;
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .block.block-network .column {
+    margin-right: 0 !important;
   }
 }
 
