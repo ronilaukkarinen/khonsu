@@ -13,15 +13,6 @@
       $('.equal, .artist-image, .trakt-image').css( { 'height': ($('.col-min').outerHeight() + 'px' ) });
     }
 
-    // Stacked mobile blocks
-    if (window.innerWidth < 770) {
-
-      $('.block-latest .entry, block-random .entry').each(function() {
-        var contentheight =  $(this).find('.entry-details').outerHeight()
-        $(this).find('.entry-featured-image').outerHeight(contentheight);
-      })
-    }
-
     // Dynamically load now playing song to footer content over cache
     $("#dynamic-lastfm").load(dynamicFooter.lastfm);
 
