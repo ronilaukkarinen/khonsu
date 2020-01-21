@@ -15,6 +15,11 @@
   }
 }
 
+.entry-content.template-info a:not(.button):not(.post-edit-link),
+.container-page a:not(.button):not(.post-edit-link) {
+  @extend %link;
+}
+
 body {
   margin: 0;
 
@@ -125,7 +130,7 @@ body {
     li,
     span {
       a:not(.button):not(.post-edit-link) {
-        @extend .link;
+        @extend %link;
       }
     }
   }
