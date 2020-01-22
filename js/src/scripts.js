@@ -66,7 +66,9 @@
     });
 
     // Fitvids
-    $('.entry-content, .entry-content p, .entry-content iframe, .post').fitVids();
+    if (window.innerWidth < 800) {
+      $('.entry-content').fitVids();
+    }
 
     // Load random posts dynamically
     $('.dynamic-content').load('/content/themes/khonsu/template-parts/block-random-dynamic.php');
