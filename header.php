@@ -23,7 +23,7 @@
 
 <?php wp_head(); ?>
 
-<?php if ( is_singular() ) : ?>
+<?php if ( is_singular() && ! has_tag( 'raha' ) ) : ?>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -87,7 +87,7 @@
               ) ); ?>
 
           </nav><!-- #site-navigation -->
-        </div><!-- .container -->          
+        </div><!-- .container -->
       </div><!-- .silver-lining -->
       <?php endif; ?>
     </div><!-- .header-inner-->
