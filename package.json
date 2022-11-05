@@ -5,7 +5,7 @@
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
     "browser-sync": "~2.18.12",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "4.0.0",
     "gulp-changed": "^3.1.0",
     "gulp-clean-css": "3.7.0",
